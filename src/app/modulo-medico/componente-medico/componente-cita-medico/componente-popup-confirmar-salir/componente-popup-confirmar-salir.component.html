@@ -1,0 +1,11 @@
+<div class="backone" *ngIf="!ocultarPopUp"></div>
+  <div class="contenedor d-flex justify-content-center align-items-center flex-column" *ngIf="!ocultarPopUp">
+    <div>
+        <p>Estas realizando un diagnóstico,</p>
+        <p>¿seguro que <span style="font-weight: bold;">deseas salir</span>?</p>
+      </div>
+      <div class="d-flex justify-content-between">
+        <button type="button" class="btn botonSal">Salir</button>
+        <button type="button" class="btn botonCont" (click)="togglePopup()">Continuar diagnóstico</button>
+      </div>
+</div>

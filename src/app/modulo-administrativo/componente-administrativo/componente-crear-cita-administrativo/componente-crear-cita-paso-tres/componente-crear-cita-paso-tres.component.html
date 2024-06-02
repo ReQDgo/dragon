@@ -1,0 +1,30 @@
+<app-componente-botones-cabecera
+[tituloCabecera]="'Crear Cita'"
+[botonRetroceder]="true"
+[botonCancelar]="true"
+[botonCrearCita]="false"
+[botonSalirPaciente]="false"
+[rutaRetroceder]="'administrativo/citas'"
+[rutaCancelar]="'administrativo/citas'"
+
+></app-componente-botones-cabecera>
+
+<app-componente-caja-blanca
+    [mostrarFormularioPrincipal]="true"
+
+    [texto1]="'Buscar paciente'"
+    [texto2]="'Asignar datos'"
+    [texto3]="'Confirmar datos'"
+
+    [estilosPaso1]="{ 'color': '#b7b7b7'}"
+    [estilosPaso2]="{ 'color': '#b7b7b7'}"
+    [estilosPaso3]="{ 'color': '#3b82f6'}"
+    [estilosCuadradoPaso3]="{ 'background-color': '#3b82f6'}"
+    [estilosPaso4]="{ 'color': '#b7b7b7'}"
+
+
+
+    [estilosFormulario]="{ 'width':'400px','display': 'flex', 'justify-content': 'space-evenly' , 'flex-direction': 'row' }"
+    [mostrarResumenDatosCrearCita]="true"
+
+></app-componente-caja-blanca>

@@ -1,0 +1,69 @@
+<div class="d-flex flex-column justify-content-end">
+  <app-componente-botones-cabecera [tituloCabecera]="'Crear informe de la cita'" [botonRetroceder]="true"
+    [botonCancelar]="false" [botonCrearCita]="false" [botonSalirPaciente]="false" [rutaRetroceder]="'radiologo/buscarCita'"></app-componente-botones-cabecera>
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="d-flex flex-column justify-content-between">
+        <app-componente-caja-informacion-paciente></app-componente-caja-informacion-paciente>
+
+        <!-- Caja para seleccionar la imagen -->
+        <div id="cajaSubir" class="caja d-flex flex-column align-items-start justify-content-center">
+          <p id="textoSubirPruebas" class="fs-4 mx-4 fw-bold">Subir pruebas</p>
+          <p class="mx-4 fs-5">Imagen <span style="color: #F00;">*</span></p>
+          <form class="mx-4" action="">
+            <!-- Cambio: Permitir la selección de múltiples archivos -->
+            <input type="file" id="fileInput" class="mb-2" multiple (change)="onFileSelected($event)"><br>
+          </form>
+        </div>
+        
+
+        <div id="cajaImg" class="caja d-flex flex-column">
+          <p class="fw-bold fs-4 mx-4 mt-4">Imágenes Subidas</p>
+          <!-- Cambio: Usar un bucle para mostrar todos los archivos seleccionados -->
+          <div *ngFor="let file of selectedFiles; let i = index" class=" d-flex mx-4 justify-content-between">
+            <p class="mb-1" id="nombreImagen">
+              {{ file.name }}
+              <a (click)="togglePopUps(i)">
+                <img src="../../../../../assets/images/ImagenesRadiologo/abrirImgRadiologo.svg" alt="">
+              </a>
+            </p>
+            <button id="btn_eliminar"(click)="eliminarImagen(i)">Eliminar</button>
+          </div>
+        </div>
+
+        <div *ngIf="mostrarPopUps" class="overlay">
+          <div class="popups-container d-flex flex-row" (click)="$event.stopPropagation()"> 
+            <div *ngIf="selectedFileIndex !== null" class="popup">
+              <p>{{ selectedFiles[selectedFileIndex].name }}</p> <!-- Agregar el nombre de la imagen encima--->
+              <img [src]="crearUrl(selectedFiles[selectedFileIndex])" alt="Imagen" style="max-width: 100%; max-height: 90%;">
+              
+              
+            </div>
+            <div class="informe">
+              <app-componente-informe-pruebas 
+                [anchoInforme]="625" 
+                [alturaInforme]="759"
+                (textoCambiado)="onTextoCambiado($event)">
+              </app-componente-informe-pruebas>
+              
+            </div>
+            <button class="boton-cerrar h-25" (click)="cerrarPopUps()">Guardar y Salir</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="col-md-9 d-flex justify-content-end">   <!------REALIZAMOS ESTE INFORME DIRECTAMENTE EN EL HTML PORQUE SE VA A TENER QUE DIFERENCIAR DE ALGUNA-->
+      <div class="d-flex flex-column" id="cajaTextAreaOriginal"> <!----MANERA CON LOS DEMÁS TEXTAREA CREADOS A PARTIR DE LA LLAMADA DEL COMPONENTE Y EL BUCLE-->
+        <p class="mb-2">Informe de la prueba</p>
+        <textarea id="textAreaOriginal" rows="25" cols="50" [(ngModel)]="textAreaOriginalContent"></textarea>
+      </div>
+    </div>
+
+    <div class="d-flex flex-end align-items-end justify-content-end">
+      <button routerLink="{{siguienteRuta}}" (click)="guardarInforme()" class="botonGenerarPDF">Generar</button>
+    </div>
+  </div>
+</div>

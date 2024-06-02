@@ -1,0 +1,30 @@
+.cajaTelefono {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 3px 5px 13px 0px rgba(0, 0, 0, 0.1),
+    12px 20px 24px 0px rgba(0, 0, 0, 0.09),
+    27px 46px 32px 0px rgba(0, 0, 0, 0.05),
+    49px 82px 38px 0px rgba(0, 0, 0, 0.01), 76px 128px 42px 0px rgba(0, 0, 0, 0);
+  max-height: 100%;
+  padding-top: 3px;
+  padding-bottom: 1px;
+}
+.cajaDireccion {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 3px 5px 13px 0px rgba(0, 0, 0, 0.1),
+    12px 20px 24px 0px rgba(0, 0, 0, 0.09),
+    27px 46px 32px 0px rgba(0, 0, 0, 0.05),
+    49px 82px 38px 0px rgba(0, 0, 0, 0.01), 76px 128px 42px 0px rgba(0, 0, 0, 0);
+  max-height: 100%;
+  padding-top: 3px;
+  padding-bottom: 1px;
+}
+
+.cajaDireccion img{
+  margin-bottom: 5px;
+}
+
+.cajaTelefono img:nth-child(1){
+  margin-bottom: 3px;
+}

@@ -1,0 +1,46 @@
+<!-- COMPONENTE QUE MUESTRA LOS PASOS DEL FORMULARIO EN LA CAJA BLANCA -->
+
+<div class="row mt-5 barraPasos fs-4 w-100  ">
+  <div class="d-flex justify-content-evenly divPasos ">
+    <!-- Paso 1 -->
+    <div id="paso1" class="d-flex flex-row">
+      <div class="paso text-white " [ngStyle]="estilosCuadradoPaso1">1</div>
+      <a [ngStyle]="estilosPaso1">{{texto1}}</a>
+    </div>
+
+    <!-- Paso 2 -->
+    <div id="paso2" class="d-flex flex-row">
+      <div class="paso text-white" [ngStyle]="estilosCuadradoPaso2">2</div>
+      <a [ngStyle]="estilosPaso2">{{texto2}}</a>
+    </div>
+
+    <!-- Paso 3 -->
+    <div *ngIf="mostrarUltimaPregunta">
+
+      <div id="paso3" class="d-flex flex-row">
+        <div class="paso text-white " [ngStyle]="estilosCuadradoPaso3">3</div>
+        <a [ngStyle]="estilosPaso3">{{texto3}}</a>
+      </div>
+    </div>
+
+    <!-- Paso 4 (mostrado condicionalmente) -->
+    <div *ngIf="mostrarUltimaPregunta">
+      <div id="paso4" class="d-flex flex-row">
+        <div class="paso text-white " [ngStyle]="estilosCuadradoPaso4">4</div>
+        <a [ngStyle]="estilosPaso4">{{texto4}}</a>
+      </div>
+    </div>
+
+    <!-- Paso 5 (resumen de los datos Pedir cita (Paciente) (mostrado condicionalmente) -->
+    <div *ngIf="mostrarUltimaPregunta">
+      <div id="paso5" class="d-flex flex-row">
+        <div class="paso text-white " [ngStyle]="estilosCuadradoPaso5">5</div>
+        <a [ngStyle]="estilosPaso5">{{texto5}}</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="justify-content-center d-flex">
+    <hr width="90%">
+  </div>
+</div>

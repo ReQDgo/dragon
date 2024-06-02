@@ -1,0 +1,72 @@
+<div class="row mx-3 mt-2">
+  <app-componente-botones-cabecera
+    [tituloCabecera]="'Detalles de la cita Especialista'"
+    [botonRetroceder]="true"
+    [botonCancelar]="false"
+    [botonCrearCita]="false"
+    [botonSalirPaciente]="true"
+    [rutaRetroceder]="'/paciente/misCitas'"
+  ></app-componente-botones-cabecera>
+</div>
+
+<div class="row mt-4 mx-3">
+  <div class="col-lg-3 col-md-4">
+    <app-componente-detalles-cita-paciente
+      [nombreDoctor]="nombreDoctor"
+      [tipoCita]="tipoCita"
+      [fechaCita]="fechaCita"
+      [horaCita]="horaCita"
+    ></app-componente-detalles-cita-paciente>
+
+    <!-- CAJA DE IMÁGENES RADIOLÓGICAS -->
+    <div class="divImagenes w-75 mt-5">
+      <p class="fs-5 fw-bold py-3">Imágenes</p>
+
+      <div class="cajaImagenes py-1 fs-6">
+        <p *ngFor="let imagen of arrayImagenes">
+          {{ imagen.nombre_imagen }}
+          <a (click)="abrirImagen(imagen.ruta_imagen)">
+            <img
+              src="assets/images/ImagenesPaciente/abrirImagenPaciente.svg"
+              alt=""
+            />
+          </a>
+        </p>
+      </div>
+
+      <!-- DIV QUE SE ENCARGA DE ABRIR EN FORMA DE POP-UP LAS IMÁGENES -->
+      <div *ngIf="mostrarPopUps" class="overlay">
+        <div (click)="$event.stopPropagation()"> <!-- Evitamos que el usuario pueda cerrar el pop-up pinchando fuera de él. -->
+          <!-- Contenido popup: -->
+          <div class="popup-container">
+            <img
+              class="cerrar-icon"
+              src="assets/images/ImagenesPaciente/iconoCerrarPopUp.svg"
+              alt=""
+              (click)="cerrarPopUps($event)"
+            />
+            <div class="imagen-container">
+              <img
+                class="img-fluid imagenRadiologica"
+                [src]="mostrarImagenSeleccionada"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FIN CAJA DE IMÁGENES RADIOLÓGICAS -->
+  </div>
+
+  <div class="col-md-2 col-lg-3"></div>
+
+  <div class="col-md-6">
+    <app-componente-informe-doctor-paciente
+      [tipoTextarea]="'Informe'"
+      [numeroRowsTextarea]="'20'"
+      [numeroColsTextarea]="'55'"
+    ></app-componente-informe-doctor-paciente>
+  </div>
+</div>

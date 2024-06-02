@@ -1,0 +1,16 @@
+.col-md-12 {
+  background-color: white;
+  height: 80vh;
+  border-radius: 6px;
+  box-shadow: -0.088px 2.398px 8.288px 0px rgba(0, 0, 0, 0.04),
+    -0.439px 11.992px 51px 0px rgba(0, 0, 0, 0.07);
+}
+
+.botonConfirmacion {
+  background-color: #3b82f6;
+  border-style: hidden;
+  color: white;
+  border-radius: 6px;
+  height: 6vh;
+  width: 200px;
+}

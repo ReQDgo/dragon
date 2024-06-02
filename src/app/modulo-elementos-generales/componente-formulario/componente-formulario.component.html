@@ -1,0 +1,130 @@
+
+<div>
+
+  <div class="card-body">
+
+    <form class="was-validated" action="" #formulario="ngForm" >
+
+      <!--FORMULARIO PRINCIPAL-->
+
+      <div *ngIf="mostrarFormPrincipal">
+        <div [ngStyle]="estilosFormulario">
+
+          <div *ngIf="mostrarNuevoMedico">
+            <div class="mb-3">
+              <label for="nuevoMedico" class="form-label">{{labelNuevoMedico}}<span
+                  class="ms-1 asterisco">*</span></label>
+              <select id="nuevoMedico" name="nuevoMedico" class="form-select" required>
+                <option value="">Selecciona una opción</option>
+                <option value="medico1">Medico Normal</option>
+                <option value="medico2">Medico Especialista</option>
+              </select>
+            </div>
+          </div>
+
+          <div *ngIf="mostrarNuevaFecha">
+            <div class="mb-3">
+              <label for="nuevaFecha" class="form-label">{{labelNuevaFecha}}<span
+                  class="ms-1 asterisco">*</span></label>
+              <select id="nuevaFecha" name="nuevaFecha" class="form-select">
+                <option value="">Selecciona una opción</option>
+                <option value="fecha1">Fecha 1</option>
+                <option value="fecha2">Fecha 2</option>
+                <option value="fecha3">Fecha 3</option>
+              </select>
+            </div>
+          </div>
+
+          <div *ngIf="mostrarNuevaHora">
+            <div class="mb-3">
+              <label for="nuevaHora" class="form-label">{{labelNuevaHora}}<span class="ms-1 asterisco">*</span></label>
+              <select id="nuevaHora" name="nuevaHora" class="form-select">
+                <option value="">Selecciona una opción</option>
+                <option value="hora1">Hora 1</option>
+                <option value="hora2">Hora 2</option>
+                <option value="hora3">Hora 3</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- SELECT PACIENTE (PEDIR CITA PASO Nº2) -->
+
+          <div *ngIf="mostrarEleccionMedico">
+            <div class="" style="margin: -25px; margin-bottom: 80px;">
+              <select id="medicoEleccion" name="medicoEleccion" class="form-select w-75" style="margin-left: 60px;">
+                <option value="">Selecciona una opción</option>
+                <option value="medico1">Dra. Laura Gómez</option>
+                <option value="medico2">Dra. Paula Valero</option>
+                <option value="medico3">Dr. Alejandro Roca</option>
+              </select>
+            </div>
+          </div>
+
+          <div *ngIf="mostrarInputCuatro">
+            <div class="mb-3">
+              <label for="nuevoMedico" class="form-label">{{labelInputCuatro}}<span
+                  class="ms-1 asterisco">*</span></label>
+              <select id="nuevoMedico" name="nuevoMedico" class="form-select">
+                <option value="">Selecciona una opción</option>
+                <option value="hora1">Marina Garcia</option>
+                <option value="hora2">Jesus Montello</option>
+                <option value="hora3">David Perez</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- FORMULARIO PEDIR CITA PACIENTE -->
+
+      <!-- CHECKBOXES (PASO 1 Y PASO 4)-->
+      <div *ngIf="mostrarCheckboxesPedirCita">
+        <div class="checkboxPaciente fw-bold mb-5 justify-content-center align-center text-center"
+          style="font-size: 1.1rem;">
+          <div class="labelPaciente" [ngStyle]="estiloCheckboxesPaciente">
+            <input type="checkbox" name="checkboxGroup" id="checkbox1" value="{{valueCheckbox1}}"
+              (change)="seleccionarUnCheckbox($event)">
+            <label for="checkbox1">&nbsp;{{textoLabel1}}</label>
+          </div>
+          <br>
+          <div class="labelPaciente" [ngStyle]="estiloCheckboxesPaciente">
+            <input type="checkbox" name="checkboxGroup" id="checkbox2" value="{{valueCheckbox2}}"
+              (change)="seleccionarUnCheckbox($event)">
+            <label for="checkbox2">&nbsp;{{textoLabel2}}</label>
+          </div>
+          <br>
+          <div class="labelPaciente" [ngStyle]="estiloCheckboxesPaciente">
+            <input *ngIf="mostrarTercerCheckboxPedirCita" type="checkbox" name="checkboxGroup" id="checkbox3"
+              value="{{valueCheckbox3}}" (change)="seleccionarUnCheckbox($event)">
+            <label *ngIf="mostrarTercerLabelPedirCita" for="checkbox3">&nbsp;{{textoLabel3}}</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- INPUTS (PASO 3)-->
+      <div *ngIf="mostrarInputsPedirCita">
+
+        <div class="mb-3 w-75 d-flex mx-5" style="margin: -15px;">
+          <label for="nombre" class="form-label fw-bold text-dark">Fecha<span class="ms-1 asterisco">*</span></label>
+          <input type="date" class="form-control mx-2" id="fechaPedirCita" name="fechaPedirCita" value="">
+        </div>
+
+        <div class="mb-3 d-flex mx-5">
+          <label for="nombre" class="form-label fw-bold text-dark">Hora<span class="ms-1 asterisco">*</span></label>
+          <input type="text" class="form-control" id="horaPedirCita" name="horaPedirCita"
+            placeholder="Introduce la hora" style="margin-left: 17px; width: 268px;">
+        </div>
+      </div>
+      
+      <!--
+      <app-componente-boton-retroceder-continuar [rutaProximoPaso]="rutaProximoPaso"
+        [rutaAnteriorPaso]="rutaAnteriorPaso" [buttonText]="'Continuar'"
+        [mostrarBotonRetroceder]="mostrarBotonRetroceder" [estiloBotonContinuar]="estiloBotonContinuar"
+        [estiloBotonRetroceder]="estiloBotonRetroceder"></app-componente-boton-retroceder-continuar>
+-->
+    </form>
+
+  </div>
+
+</div>

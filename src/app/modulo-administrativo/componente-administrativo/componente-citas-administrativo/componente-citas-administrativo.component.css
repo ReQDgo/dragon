@@ -1,0 +1,75 @@
+
+:host ::ng-deep  tbody {
+  text-align: center;
+}
+:host ::ng-deep .sorting {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 50px;
+  background-color: #fff;
+}
+
+
+/*:host ::ng-deep td {
+width: 400px;
+}*/
+:host ::ng-deep .even {
+  height: 82px;
+  background-color: #fff;
+}
+
+:host ::ng-deep .odd {
+  height: 82px;
+  background: #f7f9fc;
+  transition: 0.15s ease;
+}
+
+/*.ODD SON LAS PARES*/
+
+:host ::ng-deep .odd:hover {
+  background-color: #3569fd;
+  cursor: pointer;
+  color: white;
+}
+
+/*.EVEN SON LAS IMPARES*/
+:host ::ng-deep .even:hover {
+  background-color: #3569fd;
+  cursor: pointer;
+  color: white;
+}
+
+:host ::ng-deep .table-hover tr:hover {
+  background-color: #d3d3d3;
+}
+
+
+:host ::ng-deep  #tablaCitas_filter{
+  margin-right: 20px;
+  }
+  
+
+:host ::ng-deep .even:hover a:nth-child(1) img {
+  cursor: pointer;
+  content: url("/assets/images/ImagenesAdministrativo/editarCitaBlanco.svg");
+}
+
+:host ::ng-deep .even:hover a:nth-child(2) img {
+  cursor: pointer;
+  content: url("/assets/images/ImagenesGenerales/papeleraBlanco.svg");
+}
+
+:host ::ng-deep .odd:hover a:nth-child(1) img {
+  cursor: pointer;
+  content: url("/assets/images/ImagenesAdministrativo/editarCitaBlanco.svg");
+}
+
+:host ::ng-deep .odd:hover a:nth-child(2) img {
+  cursor: pointer;
+  content: url("/assets/images/ImagenesGenerales/papeleraBlanco.svg");
+}
+
+:host ::ng-deep .table-hover tr:hover {
+  background-color: #d3d3d3;
+}

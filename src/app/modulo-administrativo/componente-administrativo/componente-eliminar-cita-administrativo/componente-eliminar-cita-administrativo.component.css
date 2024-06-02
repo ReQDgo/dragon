@@ -1,0 +1,39 @@
+.eliminacion {
+    background-color: white;
+    height: 80vh;
+    border-radius: 6px;
+    box-shadow: -0.088px 2.398px 8.288px 0px rgba(0, 0, 0, 0.04),
+      -0.439px 11.992px 51px 0px rgba(0, 0, 0, 0.07);
+  }
+  
+  .pregunta {
+    margin-top: 200px;
+  }
+  
+  .botonSI {
+    background-color: #248e28;
+    width: 100px;
+    height: 43px;
+    font-size: 17px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .botonNO {
+    background-color: #ff0000;
+    width: 160px;
+    font-size: 17px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  

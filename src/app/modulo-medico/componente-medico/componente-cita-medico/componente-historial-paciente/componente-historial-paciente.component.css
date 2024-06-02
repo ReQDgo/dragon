@@ -1,0 +1,54 @@
+.contenedor {
+  margin-top: 20px;
+  width: 650px;
+  height: 85%;
+  background-color: #fff;
+  box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.10), 9px 10px 13px 0px rgba(0, 0, 0, 0.09), 20px 22px 18px 0px rgba(0, 0, 0, 0.05), 36px 39px 21px 0px rgba(0, 0, 0, 0.01), 57px 60px 23px 0px rgba(0, 0, 0, 0.00);
+  border-radius: 24px;
+  padding: 20px;
+}
+
+
+:host ::ng-deep  h2 {
+    padding: 20px;
+    color: #414141;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+:host ::ng-deep  table th,
+:host ::ng-deep  table td {
+  width: 574px;
+  height: 70px;
+  color: #6B6B6B;
+  font-size: 16px;
+  text-align: center;
+}
+
+:host ::ng-deep  table th {
+  background: linear-gradient(0deg, #444 0%, #444 100%), #FFF ;
+  color: #FFF;
+  font-weight: bolder;
+}
+
+:host ::ng-deep table tr:nth-child(odd) {
+  background-color: #E9E9E9;
+}
+
+:host ::ng-deep table tr:nth-child(even) {
+  background-color: #F8F8F8;
+}
+
+
+:host ::ng-deep table:hover {
+  background-color: red !important;
+}
+
+:host ::ng-deep .imagenPdf {
+  padding: 10px;
+  border-radius: 8px;
+}
+
+:host ::ng-deep .imagenPdf:hover {
+  background-color: #3B82F6;
+}

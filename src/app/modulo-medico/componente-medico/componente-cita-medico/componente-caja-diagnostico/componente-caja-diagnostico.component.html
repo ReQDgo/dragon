@@ -1,0 +1,17 @@
+<div class="container d-flex flex-column justify-content-between">
+  <div class="col-md-3 d-flex flex-column p-3">
+    <p class="mb-1">Diagnóstico</p>
+    <textarea [ngStyle]="cajaStyle" [readOnly]="isReadonly" id="textArea" class="textarea mb-5" readonly rows={{numeroRowsTextarea}} cols={{numeroColsTextarea}}  [(ngModel)]="contenidoTextarea"
+      placeholder="Escribe aqui..."></textarea>
+
+  </div>
+  <div class="d-flex justify-content-end align-items-center mt-10">
+    <button (click)="presiona_boton_guardar()" *ngIf="botonGuardar==true" type="button"
+      class="btn guardar">Guardar</button>
+    <button (click)="presiona_boton_editar_diagn()" *ngIf="botonEditarDiagn==false" type="button"
+      class="btn editar-diagn">Editar Diagnóstico</button>
+    <button (click)="generarPDF()" *ngIf="botonGenerarPDFAzul==false" type="button" class="btn generar-pdf-azul">Generar PDF</button>
+    <button (click)="presiona_boton_guardar()" *ngIf="botonGuardarEdicion==false" type="button"
+      class="btn guardar-edicion">Guardar edición</button>
+  </div>
+</div>

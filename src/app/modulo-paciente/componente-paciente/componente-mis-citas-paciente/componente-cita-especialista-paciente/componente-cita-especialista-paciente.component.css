@@ -1,0 +1,82 @@
+.divImagenes {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 3px 5px 13px 0px rgba(0, 0, 0, 0.1),
+    12px 20px 24px 0px rgba(0, 0, 0, 0.09),
+    27px 46px 32px 0px rgba(0, 0, 0, 0.05),
+    49px 82px 38px 0px rgba(0, 0, 0, 0.01), 76px 128px 42px 0px rgba(0, 0, 0, 0);
+  max-height: 100%;
+}
+
+.cajaImagenes {
+  border-radius: 6px;
+}
+
+p {
+  margin-left: 30px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Un fondo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background: #fff;
+  padding: 0px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+}
+
+.popup-container {
+  position: relative;
+  background-color: white;
+  padding: 10px;
+  border-radius: 16px;
+}
+
+.imagen-container img {
+  width: 70%; /* Cambiado de max-width a width */
+  border-radius: 16px;
+}
+
+.cerrar-icon {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .imagen-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .popup-container {
+    height: 56.2vh;
+    width: 90vw;
+  }
+}
+@media (min-width: 901px) {
+  .imagen-container img {
+    max-width: 50vw;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 991px) {
+  .imagen-container img {
+    max-width: 50vw;
+    border-radius: 16px;
+  }
+}

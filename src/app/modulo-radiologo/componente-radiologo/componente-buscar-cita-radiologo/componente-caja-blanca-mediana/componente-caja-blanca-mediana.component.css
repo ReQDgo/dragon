@@ -1,0 +1,46 @@
+.col-md-3 {
+  background-color: white;
+  height: 30vh;
+  border-radius: 16px;
+  box-shadow: 3px 5px 13px 0px rgba(0, 0, 0, 0.10), 12px 20px 24px 0px rgba(0, 0, 0, 0.09), 27px 46px 32px 0px rgba(0, 0, 0, 0.05), 49px 82px 38px 0px rgba(0, 0, 0, 0.01), 76px 128px 42px 0px rgba(0, 0, 0, 0.00);
+  width: 502px;
+  height: 338px;
+}
+
+.col-md-3 p {
+  color: #414141;
+  font-size: 22px;
+  font-weight: bolder;
+
+}
+
+.altura {
+  height: 90vh;
+}
+
+input[type=text] {
+  text-align: center;
+  border-radius: 6px;
+  border: 2px solid #E2E7EB;
+  background: #FFF;
+  width: 232px;
+  height: 55px;
+}
+
+input[type=text]::placeholder {
+  text-align: center;
+  color: #B8BEC9;
+  font-size: 18px;
+}
+
+#btn_comprobar{
+  height: 48px;
+  width: 175px;
+  font-size: 20px;
+  background-color: #3B82F6;;
+  border-radius: 10px;
+  line-height: 35px;
+  color: white;
+  border-color: #3b83f600;
+  margin-top: 10px;
+}

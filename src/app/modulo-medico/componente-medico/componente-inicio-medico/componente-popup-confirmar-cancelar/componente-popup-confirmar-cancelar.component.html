@@ -1,0 +1,11 @@
+<div class="backone"></div>
+<div class="contenedor d-flex justify-content-center align-items-center flex-column">
+  <div>
+    <p>¿Seguro que quieres <span style="font-weight: bold;">cancelar la cita con el numero {{num_cita_recibido}}</span>?
+    </p>
+  </div>
+  <div class="d-flex justify-content-between">
+    <button type="button" class="btn botonSal" (click)="cancelar()">Cancelar Cita</button>
+    <button type="button" class="btn botonCont" (click)="confirmar()">No</button>
+  </div>
+</div>

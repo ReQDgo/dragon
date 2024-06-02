@@ -1,0 +1,34 @@
+<div class="row mx-3 mt-2">
+  <app-componente-botones-cabecera
+    [tituloCabecera]="'Pedir cita'"
+    [botonRetroceder]="true"
+    [botonCrearCita]="false"
+    [botonCancelar]="true"
+    [botonSalirPaciente]="false"
+    [rutaRetroceder]="'paciente'"
+    [rutaCancelar]="'paciente'"
+  ></app-componente-botones-cabecera>
+</div>
+
+<div class="row mx-4 mt-2">
+  <app-componente-caja-blanca
+    [mostrarUltimaPregunta]="true"
+    [texto1]="'Tipo de cita'"
+    [texto2]="'Selección de médico'"
+    [texto3]="'Selección de fecha'"
+    [texto4]="'Citas disponibles'"
+    [texto5]="'Resumen de los datos'"
+    [estilosPaso1]="{ color: '#b7b7b7' }"
+    [estilosPaso2]="{ color: '#b7b7b7' }"
+    [estilosPaso3]="{ color: '#b7b7b7' }"
+    [estilosPaso4]="{ color: '#b7b7b7' }"
+    [estilosCuadradoPaso5]="{ 'background-color': '#3b82f6' }"
+    [estilosPaso5]="{ color: '#3b82f6' }"
+    [rutaProximoPaso]="'/paciente/pedirCita/confirmacion'"
+    [rutaAnteriorPaso]="'/paciente/pedirCita/pedirCitaPaso4'"
+    [mostrarNuevoMedico]="true"
+    [mostrarBotonRetroceder]="true"
+    [mostrarResumenDatosCrearPaciente]="true"
+    [estiloBotonRetroceder]="{'margin-bottom' : '120px'}"
+  ></app-componente-caja-blanca>
+</div>

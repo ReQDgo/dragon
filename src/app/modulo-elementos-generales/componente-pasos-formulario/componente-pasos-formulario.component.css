@@ -1,0 +1,40 @@
+/* Estilos generales */
+a {
+  text-decoration: none;
+  color: #b7b7b7;
+  margin-left: 15px;
+  line-height: 43px;
+}
+
+.paso {
+  width: 41px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background-color: #b7b7b7;
+}
+
+/* Resolución móviles  */
+@media (max-width: 600px) {
+  .barraPasos a {
+    font-size: 20px !important;
+  }
+
+  .paso {
+    margin-left: 90px;
+  }
+
+  .divPasos {
+    flex-direction: column;
+  }
+}
+
+/* Resolución medianas */
+@media (max-width: 991px) {
+  .barraPasos a {
+    margin-left: 6px;
+    font-size: 12px;
+  }
+}

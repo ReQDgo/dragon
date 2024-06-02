@@ -1,0 +1,87 @@
+<div *ngIf="mostrarResumenDatosCrearPaciente">
+  <div class="row">
+    <div class="col-md-12 d-flex flex-column justify-content-center text-center align-center"
+      style="margin-top: -80px;">
+      <h1 class="fw-bold">Resumen de los datos</h1>
+
+      <div class="col-md-6"
+        style="width: 1000px; display: flex; flex-direction: row; justify-content:space-between; margin-top: 30px;">
+
+        <div class="w-50 d-flex flex-column justify-content-center align-items-start">
+          <div class="d-flex">
+            <h5><strong>Nombre:</strong> <span class="info">{{ nombre }}</span></h5>
+          </div>
+
+          <div class="d-flex">
+            <h5><strong>Primer Apellido:</strong> <span class="info">{{ primer_apellido }}</span></h5>
+          </div>
+
+          <div class="d-flex">
+            <h5><strong>Segundo Apellido:</strong> <span class="info">{{ segundo_apellido }}</span></h5>
+          </div>
+
+          <div class="d-flex">
+            <h5><strong>Fecha de Nacimiento:</strong> <span class="info">{{ fechaNacimiento }}</span></h5>
+          </div>
+
+          <div class="d-flex">
+            <h5><strong>Número de teléfono:</strong> <span class="info">{{ telefono }}</span></h5>
+          </div>
+
+          <div class="d-flex">
+            <h5><strong>Correo electrónico:</strong> <span class="info">{{ email }}</span></h5>
+          </div>
+
+          <div class="d-flex">
+            <h5><strong>Dni:</strong> <span class="info">{{ dniPaciente }}</span></h5>
+          </div>
+
+          <div class="d-flex">
+            <h5><strong>Contraseña:</strong> <span class="info">{{ password }}</span></h5>
+          </div>
+        </div>
+
+        <div class="w-50 d-flex justify-content-center align-items-start flex-column">
+          <div class="d-flex">
+            <h5><strong>Provincia:</strong> <span class="info">{{ provincia }}</span></h5>
+          </div>
+
+          <div class="d-flex">
+            <h5><strong>Código Postal:</strong> <span class="info">{{ cp }}</span></h5>
+          </div>
+
+          <div class="d-flex">
+            <h5><strong>Número:</strong> <span class="info">{{ numero }}</span></h5>
+          </div>
+
+          <div class="d-flex">
+            <h5><strong>Puerta:</strong> <span class="info">{{ puerta }}</span></h5>
+          </div>
+
+          <div class="d-flex">
+            <h5><strong>Población:</strong> <span class="info">{{ poblacion }}</span></h5>
+          </div>
+
+          <div class="d-flex">
+            <h5><strong>Dirección:</strong> <span class="info">{{ direccion }}</span></h5>
+          </div>
+
+          <div class="d-flex">
+            <h5><strong>Piso:</strong> <span class="info">{{ piso }}</span></h5>
+          </div>
+
+          <div class="d-flex">
+            <h5><strong>Escalera:</strong> <span class="info">{{ escalera }}</span></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row  mt-5">
+      <form class=" d-flex justify-content-center text-center align-center " #myFormu="ngForm"
+        (ngSubmit)="confirmacionCrearPaciente()">
+        <input type="submit" class="btn btn-primary" value="Continuar">
+      </form>
+    </div>
+  </div>
+</div>

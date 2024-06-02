@@ -1,0 +1,29 @@
+<div class="row mx-3 mt-2">
+  <app-componente-botones-cabecera
+    [tituloCabecera]="'Pedir cita'"
+    [botonRetroceder]="true"
+    [botonCrearCita]="false"
+    [botonCancelar]="false"
+    [botonSalirPaciente]="false"
+    [rutaRetroceder]="'paciente'"
+    [rutaCancelar]="'paciente'"
+  ></app-componente-botones-cabecera>
+</div>
+
+<div class="row mx-3 mt-2">
+  <app-componente-confirmacion
+    [textoConfirmacion]="'Cita creada correctamente'"
+    [textoBoton]="'Volver al inicio'"
+    [ruta]="'paciente'"
+  ></app-componente-confirmacion>
+</div>
+
+<div class="row mx-3 mt-2">
+    <app-componente-error
+      [textoConfirmacion]="'Error al crear la cita'"
+      [textoBoton]="'Volver al inicio'"
+      [ruta]="'paciente'"
+    ></app-componente-error>
+  </div>
+  
+  

@@ -1,0 +1,37 @@
+<app-componente-botones-cabecera 
+[tituloCabecera]="'Crear cita'"
+[botonRetroceder]="true"
+[botonCancelar]="true"
+[botonCrearCita]="false"
+[botonSalirPaciente]="false"
+[rutaRetroceder]="'administrativo/citas'"
+[rutaCancelar]="'administrativo/citas'"
+
+></app-componente-botones-cabecera>
+
+<app-componente-caja-blanca 
+    [tituloSeccionFormulario]="'Búsqueda del paciente'"
+    [mostrarFormularioPrincipal]="false"
+    [mostrarFormPrincipal]="true"
+    [mostrarFormCrearPaciente]="false"
+    [crearCitaPaso1]="true"
+
+    [texto1]="'Buscar paciente'"
+    [texto2]="'Asignar datos'"
+    [texto3]="'Confirmar datos'"
+
+    [descripcionTituloFormulario]="'Realización de la búsqueda del paciente para la creación de la cita'"
+    [labelNuevoMedico]="'DNI del paciente'"
+
+    [mostrarNuevoMedico]="true"
+    [mostrarNuevaFecha]="false"
+    [mostrarNuevaHora]="false"
+
+    [estilosPaso1]="{ 'color': '#3b82f6'}"
+    [estilosCuadradoPaso1]="{ 'background-color': '#3b82f6'}"
+    [estilosPaso2]="{ 'color': '#b7b7b7'}"
+    [estilosPaso3]="{ 'color': '#b7b7b7'}"
+    [estilosPaso4]="{ 'color': '#b7b7b7'}"
+    [estilosFormulario]="{ 'width':'400px'}"
+    [crearCitaPaso1]="true"
+></app-componente-caja-blanca>

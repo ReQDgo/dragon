@@ -1,0 +1,73 @@
+<div class="row">
+    <app-componente-botones-cabecera [tituloCabecera]="'Modificar Cita - ' + nombrePaciente" [botonRetroceder]="true"
+        [botonCancelar]="true" [botonCrearCita]="false" [botonSalirPaciente]="false"
+        [rutaRetroceder]="'administrativo/citas'"
+        [rutaCancelar]="'administrativo/citas'"></app-componente-botones-cabecera>
+</div>
+
+<div class="row mt-2">
+
+
+    <div class="col-md-12 eliminacion">
+
+
+        <div class="row mb-3">
+            <app-componente-pasos-formulario [texto1]="'Modificar datos'" [texto2]="'Confirmar modificación'"
+                [estilosPaso1]="{ color: '#3b82f6' }" [estilosPaso2]="{ color: '#b7b7b7' }"
+                [estilosCuadradoPaso1]="{ 'background-color': '#3b82f6' }"
+                [mostrarUltimaPregunta]="false"></app-componente-pasos-formulario>
+        </div>
+
+
+        <div class="d-flex align-center justify-content-center text-center flex-column mt-5">
+            <div>
+                <h4 style="color: #3b82f6">
+                    Datos a modificar
+                </h4>
+                <p style="color: #9e9e9e">Modificación de los datos de la cita</p>
+            </div>
+
+            <div class="row">
+
+                <div class="pregunta d-flex flex-row justify-content-center mt-2" style="height: 400px;">
+
+                    <form [formGroup]="formulario" (ngSubmit)="modificarCita()" #miFormulario="ngForm">
+                        <!-- Fecha -->
+                        <div class="form-group">
+                            <label for="fecha" class="fw-bold">Insertar fecha<span
+                                    class="ms-1 asterisco fw-bold">*</span></label> <br>
+                            <input type="text" class="form-control text-center" formControlName="fecha"
+                                placeholder="2024-02-01">
+                        </div>
+
+                        <!-- Hora -->
+                        <div class="form-group">
+                            <label for="hora" class="fw-bold">Insertar hora<span
+                                    class="ms-1 asterisco fw-bold">*</span></label><br>
+                            <input type="text" class="form-control text-center" formControlName="hora"
+                                placeholder="10:30">
+                        </div>
+
+                        <!-- Radiologo -->
+                        <div class="form-group">
+                            <label for="radiologo" class="fw-bold">Seleccionar radiólogo<span
+                                    class="ms-1 asterisco fw-bold">*</span></label>
+                            <select formControlName="radiologos" class="form-select" id="medico" name="medico">
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option *ngFor="let radiologo of radiologos" [ngValue]="radiologo.id_radiologo">{{
+                                    radiologo.nombre_completo }}</option>
+                            </select>
+                        </div>
+                        <div class="row mt-5">
+                            <input type="submit" value="Continuar" [disabled]="formulario.invalid"
+                                [style.background-color]="formulario.valid ? '#3b82f6' : 'rgba(59, 130, 246, 0.6)'">
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

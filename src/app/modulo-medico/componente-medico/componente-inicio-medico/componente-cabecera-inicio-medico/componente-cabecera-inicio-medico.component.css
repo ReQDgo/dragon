@@ -1,0 +1,26 @@
+.contenedor {
+    position: relative;
+    margin-top: -40px;
+    margin-left: -40px;
+    z-index: 0;
+    padding-top: 22px;
+    padding-left: 36px;
+    width: 104%;
+
+    background-color: #005FDB;
+    color: #FFFF;
+    font-weight: bolder;
+
+    border-bottom-left-radius: 40px;
+}
+
+
+h1 {
+    font-size: 48px;
+}
+
+h6 {
+    font-size: 24px;
+    margin-top: 64px;
+    margin-bottom: 89px;
+}

@@ -1,0 +1,71 @@
+<!-- COMPONENTE CON TODOS LOS BOTONES QUE APARECEN AL INICIO DE LA PANTALLA, MOSTRANDOSE ALGUNOS DE ELLOS SEGUÚN LAS MISMAS -->
+
+<div class="row">
+  <h1 class="fw-bold">{{tituloCabecera}}</h1>
+</div>
+
+
+<div class="row mt-3 mb-3">
+  <div class="d-flex justify-content-between w-100" style="margin-top: -15px;">
+
+    <!-- BOTÓN RETROCESO -->
+    <button (click)="redirigir('retroceder')" *ngIf="botonRetroceder" type="button"
+      class="botonRetroceso btn d-flex flex-row">
+      <div class="d-flex h-100">
+        <img width="20px" src="../../../assets/images/ImagenesGenerales/flechaRetroceso.svg" alt="" />
+        <p>Volver al inicio</p>
+      </div>
+    </button>
+
+    <!-- BOTÓN CANCELAR -->
+    <button (click)="abrirPopUpCancelar()" *ngIf="botonCancelar" type="button"
+      class="botonCancelar btn d-flex flex-row">
+      <div class="d-flex h-100">
+        <img width="20px" src="../../../assets/images/ImagenesGenerales/iconoCancelar.svg" alt="" />
+        <p>Cancelar</p>
+      </div>
+    </button>
+
+    <!-- Contenido del pop-up de cancelación -->
+    <div *ngIf="mostrarPopUpCancelar" class="overlay h-100 d-flex text-center align-center justify-content-center">
+      <div (click)="$event.stopPropagation()">
+        <div class="popup-container">
+
+          <div class="popup-contenido">
+            <div>
+              <img class="cerrar-icon" src="assets/images/ImagenesPaciente/iconoCerrarPopUp.svg" alt=""
+                (click)="cerrarPopUpCancelar()" />
+            </div>
+            <div>
+              <p class="fw-bold fs-3">¿Estás seguro que deseas cancelar</p>
+              <p class="fw-bold fs-3 mt-2"> el proceso?
+              <div class="row botonesCancelar d-flex justify-content-around mt-4">
+                <button (click)="redirigir('cancelar')" class=" btn botonNO"> Confirmar cancelación </button>
+                <button class="btn botonSI" (click)="cerrarPopUpCancelar()">Continuar con el proceso</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- BOTÓN CREAR CITA -->
+    <div *ngIf="botonCrearCita" class="d-flex h-100">
+      <button (click)="redirigir('crearCita')" type="button" class="botonCrearCita btn text-light d-flex flex-row">
+        <p>Crear cita</p>
+      </button>
+    </div>
+
+    <!-- BOTÓN SALIR (PACIENTE) -->
+    <div *ngIf="botonSalirPaciente" class="d-flex h-100" [ngStyle]="estilosBotonSalirPaciente">
+      <button (click)="logout()" type="button" class="botonSalirPaciente btn">
+        <div class="d-flex flex-column">
+          <img width="45px" src="../../../assets/images/salir.svg" alt="" />
+          <p>Salir</p>
+        </div>
+      </button>
+    </div>
+
+  </div>
+</div>

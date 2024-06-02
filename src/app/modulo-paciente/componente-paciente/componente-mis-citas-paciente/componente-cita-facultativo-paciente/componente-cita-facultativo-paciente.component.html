@@ -1,0 +1,31 @@
+<div class="row mx-3 mt-2">
+  <app-componente-botones-cabecera
+    [tituloCabecera]="'Detalles de la cita'"
+    [botonRetroceder]="true"
+    [botonCancelar]="false"
+    [botonCrearCita]="false"
+    [botonSalirPaciente]="true"
+    [rutaRetroceder]="'/paciente/misCitas'"
+  ></app-componente-botones-cabecera>
+</div>
+
+<div class="row mt-4 mx-3">
+  <div class="col-lg-3 col-md-4" >
+    <app-componente-detalles-cita-paciente
+    [nombreDoctor]="nombreDoctor"
+      [tipoCita]="tipoCita"
+      [fechaCita]="fechaCita"
+      [horaCita]="horaCita"
+    ></app-componente-detalles-cita-paciente>
+  </div>
+
+  <div class="col-md-2 col-lg-3"></div>
+
+  <div class="col-md-6">
+    <app-componente-informe-doctor-paciente
+      [tipoTextarea]="'Diagnóstico'"
+      [numeroRowsTextarea]="'20'"
+      [numeroColsTextarea]="'55'"
+    ></app-componente-informe-doctor-paciente>
+  </div>
+</div>

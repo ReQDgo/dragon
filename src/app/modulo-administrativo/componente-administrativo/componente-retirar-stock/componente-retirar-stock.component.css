@@ -1,0 +1,171 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s; 
+  padding: 20px;
+  height: 220px;
+  width: 550px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  padding: 8px;
+  text-align: left;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ddd;
+}
+
+.table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; 
+}
+
+
+.table tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.minimal-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.minimal-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.material-card {
+  width: 300px;
+  height: 300px; 
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 2px 8.3px 0px rgba(0, 0, 0, 0.15);
+}
+
+.image-container {
+  height: 150px; 
+  width: 100%; 
+  overflow: hidden;
+  padding: 5px;
+}
+
+.material-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.material-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #484747;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.material-body{
+  padding: 10px;
+}
+
+#contenedor-materiales {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+.eliminar-material {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #FF4343;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.material-retirado {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  margin-bottom: 10px; 
+  padding: 17px; 
+  box-shadow: 0px 2px 8.3px 0px rgba(0, 0, 0, 0.15);
+  border: 1px solid #D7D7D7;
+}
+
+.material-retirado span {
+  flex: 1;
+}
+
+.material-retirado button {
+  background-color: #dc3545;
+  color: #fff; 
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.material-retirado button:hover {
+  background-color: #c82333;
+}
+
+.material-img {
+  width: 120px;
+  height: 120px;
+}
+
+.material-img.rounded-circle {
+  border-radius: 25%;
+}
+
+.btn-retirar{
+  background-color: #FF4343;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 10px;
+}
+
+#historial_en_camino {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 17px;
+  background-color: white;
+}
+
+#resumen_retirada{
+  margin: 10px;
+  padding: 10px;
+  border-radius: 17px;
+  background-color: white;
+}

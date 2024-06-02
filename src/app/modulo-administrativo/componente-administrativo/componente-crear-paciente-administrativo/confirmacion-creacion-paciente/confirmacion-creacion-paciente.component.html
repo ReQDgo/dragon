@@ -1,0 +1,18 @@
+<div class="row mx-3 mt-2">
+    <app-componente-botones-cabecera
+      [tituloCabecera]="'Crear paciente'"
+      [botonRetroceder]="true"
+      [botonCrearCita]="false"
+      [botonCancelar]="false"
+      [botonSalirPaciente]="false"
+      [rutaRetroceder]="'administrativo/citas'"
+    ></app-componente-botones-cabecera>
+  </div>
+  
+  <div class="row mx-3 mt-2">
+    <app-componente-confirmacion
+      [textoConfirmacion]="'Alta del usuario generada correctamente'"
+      [textoBoton]="'Ir a citas'"
+      [ruta]="'administrativo/citas'"
+    ></app-componente-confirmacion>
+  </div>

@@ -1,0 +1,15 @@
+<div class="informe w-100">
+
+    <p class="fw-bold fs-3 mt-3 tituloTextarea">{{tipoTextarea}}</p>
+ <!-- Condición para mostrar textarea específico para diagnósticos -->
+    <textarea *ngIf="tipoTextarea === 'Diagnóstico'" class="textarea mb-5" readonly rows={{numeroRowsTextarea}} cols={{numeroColsTextarea}}  [(ngModel)]="contenidoTextarea"></textarea>
+
+    <!-- Condición para mostrar textarea específico para informes -->
+    <textarea *ngIf="tipoTextarea === 'Informe'" class="textarea mb-5" readonly rows={{numeroRowsTextarea}} cols={{numeroColsTextarea}}  [(ngModel)]="contenidoTextarea"></textarea>
+    <div class="row mb-5">
+        <div class="d-flex flex-row">
+            <button type="button" class="btn btn-primary descargarPDF fs-5" (click)="generarPDF()">Descargar PDF</button>
+        </div>
+    </div>
+</div>
+

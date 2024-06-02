@@ -1,0 +1,68 @@
+<div class="row mx-3 mt-2">
+  <app-componente-botones-cabecera
+    [tituloCabecera]="'Pedir cita'"
+    [botonRetroceder]="true"
+    [botonCrearCita]="false"
+    [botonCancelar]="true"
+    [botonSalirPaciente]="false"
+    [rutaRetroceder]="'paciente'"
+    [rutaCancelar]="'paciente'"
+  ></app-componente-botones-cabecera>
+</div>
+
+<div class="row mx-4 mt-2">
+  <app-componente-caja-blanca
+    [mostrarUltimaPregunta]="true"
+    [texto1]="'Tipo de cita'"
+    [texto2]="'Selección de médico'"
+    [texto3]="'Selección de hora'"
+    [texto4]="'Citas disponibles'"
+    [texto5]="'Resumen de los datos'"
+
+    [estilosPaso1]="{ color: '#b7b7b7' }"
+    [estilosPaso2]="{ color: '#3b82f6' }"
+    [estilosCuadradoPaso2]="{ 'background-color': '#3b82f6' }"
+    [estilosPaso3]="{ color: '#b7b7b7' }"
+    [estilosPaso4]="{ color: '#b7b7b7' }"
+    [estilosPaso5]="{ color: '#b7b7b7' }"
+
+    [tituloSeccionFormulario]="'Seleccionar médico'"
+    [descripcionTituloFormulario]="'Selecciona el médico deseado'"
+    [rutaProximoPaso]="'/paciente/pedirCita/pedirCitaPaso3'"
+    [rutaAnteriorPaso]="'/paciente/pedirCita'"
+    [mostrarNuevoMedico]="false"
+    [mostrarNuevaFecha]="false"
+    [mostrarNuevaHora]="false"
+    [mostrarEleccionMedico]="true"
+
+    [mostrarBotonRetroceder]="true"
+    [mostrarFormPrincipal]="true"
+    
+  ></app-componente-caja-blanca>
+</div>
+
+<!-- COMPONENTE PANTALLA ERROR 
+<app-componente-botones-cabecera
+  [tituloCabecera]="'Pedir cita'"
+  [botonRetroceder]="true"
+  [botonCrearCita]="false"
+  [botonCancelar]="false"
+  [botonSalirPaciente]="false"
+  [rutaRetroceder]="'paciente'"
+  [rutaCancelar]="'paciente'"
+></app-componente-botones-cabecera>
+<app-componente-error
+[textoConfirmacion]="'Error al crear la cita'"
+[textoBoton]="'Volver al inicio'"
+
+></app-componente-error>
+
+-->
+
+<!-- COMPONENTE PANTALLA CONFIRMACIÓN
+<app-componente-confirmacion
+  [textoConfirmacion]="'Cita creada satisfactoriamente'"
+  [textoBoton]="'Volver al inicio'"
+  [ruta]="'paciente'"
+></app-componente-confirmacion>
+-->

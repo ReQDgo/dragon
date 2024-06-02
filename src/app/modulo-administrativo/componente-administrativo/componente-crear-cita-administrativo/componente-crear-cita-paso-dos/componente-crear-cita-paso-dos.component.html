@@ -1,0 +1,46 @@
+<app-componente-botones-cabecera 
+[tituloCabecera]="'Crear cita'"
+[botonRetroceder]="true"
+[botonCancelar]="true"
+[botonCrearCita]="false"
+[botonSalirPaciente]="false"
+[rutaRetroceder]="'administrativo/citas'"
+[rutaCancelar]="'administrativo/citas'"
+
+></app-componente-botones-cabecera>
+
+<app-componente-caja-blanca 
+    [tituloSeccionFormulario]="'Búsqueda del paciente'"
+
+    [tituloSeccionFormulario]="'Búsqueda del paciente'"
+    [mostrarFormularioPrincipal]="false"
+    [mostrarFormPrincipal]="true"
+    [mostrarFormCrearPaciente]="false"
+
+    [texto1]="'Buscar paciente'"
+    [texto2]="'Asignar datos'"
+    [texto3]="'Confirmar datos'"
+
+    [descripcionTituloFormulario]="'Realización de la búsqueda del paciente para la creación de la cita'"
+    
+    [labelNuevoMedico]="'Especialidad'"
+    [labelNuevaFecha]="'Fecha'"
+    [labelNuevaHora]="'Horas Disponibles'"
+
+    [mostrarNuevoMedico]="true"
+    [mostrarNuevaFecha]="true"
+    [mostrarNuevaHora]="true"
+
+    [estilosPaso1]="{ 'color': '#b7b7b7'}"
+    [estilosPaso2]="{ 'color': '#3b82f6'}"
+    [estilosCuadradoPaso2]="{ 'background-color': '#3b82f6'}"
+    [estilosPaso3]="{ 'color': '#b7b7b7'}"
+    [estilosPaso4]="{ 'color': '#b7b7b7'}"
+
+    [mostrarBotonRetroceder]="true"
+    [mostrarInputCuatro]="true"
+    [estilosFormulario]="{ 'width':'900px','display': 'flex', 'justify-content': 'space-between' , 'flex-direction': 'row' }"
+    [crearCitaPaso2]="true"
+
+></app-componente-caja-blanca>
+

@@ -1,0 +1,111 @@
+<ul class="nav navbar-nav" [ngSwitch]="roleUser">
+
+    <!--ADMINISTRATIVO-->
+    <div *ngSwitchCase="2">
+
+        <div style="margin-top: 90px;" class="d-flex flex-column">
+            <li class="nav-item  ">
+                <a class="nav-link  px-3" routerLink="/administrativo/citas">
+                    <img src="../../../assets/images/ImagenesAdministrativo/Citas.svg" alt="">
+                    <p>Citas</p>
+
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link  px-3" routerLink="/administrativo/crearPaciente">
+                    <img src="../../../assets/images/ImagenesAdministrativo/crearPaciente.svg" alt="">
+                    <p>Crear Paciente</p>
+                </a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link  px-3" routerLink="/administrativo/crearCita">
+                    <img src="../../../assets/images/ImagenesAdministrativo/crearCita.svg" alt="">
+                    <p>Crear Cita</p>
+
+                </a>
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link  px-3" routerLink="/administrativo/retirar-stock">
+                    <img src="../../../assets/images/ImagenesAdministrativo/retirar-stock.svg" alt="">
+                    <p>Retirar Stock</p>
+                </a>
+            </li>
+            <li style="margin-top:110px;" class="nav-item">
+
+                <a class="nav-link  px-3">
+                    <img src="../../../assets/images/ImagenesAdministrativo/usuario.svg" alt="">
+                    <p>{{ nombreUsuario }}</p>
+                </a>
+            </li>
+        </div>
+
+    </div>
+
+    <!--RADIOLOGO-->
+    <div *ngSwitchCase="1">
+
+        <div style="margin-top: 130px;" class="d-flex flex-column">
+            <li class="nav-item">
+
+                <a class="nav-link px-3" routerLink="/radiologo/buscarCita">
+                    <img src="../../../assets/images/ImagenesRadiologo/BuscarCita.svg" alt="">
+                    <p class="mt-2">Buscar cita</p>
+                </a>
+            </li>
+
+            <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+
+                <a class="nav-link px-3">
+                    <img src="../../../assets/images/ImagenesRadiologo/citasRadiologo.svg" alt=""
+                        *ngIf="!isActive('/radiologo')">
+
+                    <img src="../../../assets/images/ImagenesRadiologo/Cita.svg" alt=""
+                        *ngIf="isActive('/radiologo') && !isActive('/radiologo/buscarCita/citas')">
+                    <p class="mt-2">Citas</p>
+                </a>
+            </li>
+
+            <li style="margin-top: 170px;" class="nav-item">
+
+                <a class="nav-link  px-3">
+                    <img src="../../../assets/images/ImagenesRadiologo/usuario.svg" alt="">
+                    <p class="mt-2">{{ nombreUsuario }}</p>
+                </a>
+            </li>
+        </div>
+
+    </div>
+
+    <!--MEDICO-->
+    <div *ngSwitchCase="3">
+        <div style="margin-top: 130px;" class="d-flex flex-column">
+            <li class="nav-item mt-3">
+                <a class="nav-link  px-3" routerLink="/medico/inicio">
+                    <img src="assets/images/ImagenesMedico/inicio.svg" alt="">
+                    <p class="mt-1">Inicio</p>
+                </a>
+            </li>
+
+            <li class="nav-item mt-3">
+                <a class="nav-link px-3" routerLink="/medico/citas">
+                    <img src="../../../assets/images/ImagenesMedico/citaMedico.svg" alt="">
+                    <p class="mt-1">Citas</p>
+                </a>
+            </li>
+
+            <li style="margin-top: 180px;">
+                <a class="nav-link">
+                    <img src="assets/images/ImagenesMedico/usuario.svg" alt="">
+                    <p class="mt-2"> {{ nombreUsuario }} </p>
+                </a>
+            </li>
+        </div>
+    </div>
+
+    <div *ngSwitchDefault>
+
+    </div>
+</ul>

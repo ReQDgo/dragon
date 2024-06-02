@@ -1,0 +1,65 @@
+<div class="row h-100">
+  <div class="col-md-4 bg-white d-flex flex-column justify-content-center align-center text-center">
+    <div class="formularioLogin">
+
+      <form [formGroup]="formularioInicioSesion" method="post">
+        <div class="row iconoIvo d-flex justify-content-center align-center text-center">
+          <img src="../../assets/images/logotipoIvo.png" class="img-fluid" />
+        </div>
+
+        <br />
+
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div>
+                <div class="card-body p-5">
+
+                  <h3 class="mb-4 text-center mb-5">Inicio de sesión</h3>
+
+                  <div class="form-group">
+                    <label id="labelEmail" for="email" class="form-label">Correo electrónico</label>
+                    <input type="email" placeholder="Correo electrónico" formControlName="email" class="form-control"
+                      required />
+                  </div>
+
+                  <div class="form-group mt-4">
+                    <label id="labelPass" for="contraseña" class="form-label">Contraseña</label>
+                    <div class="input-group">
+                      <input formControlName="password" placeholder="Contraseña" type="password" class="form-control"
+                        [type]="contrasenaVisible ? 'text' : 'password'" [(ngModel)]="contrasenaUsuario" required />
+                      <div class="input-group-append">
+                        <img src="{{ rutaIcono }}" class="password-icon" (click)="cambiarVisibilidadIcono()" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <input type="submit" value="Iniciar sesión" class="btn btn-primary btn-block mt-3"
+                    (click)="onSubmit()">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br />
+
+      </form>
+    </div>
+  </div>
+
+  <div class="col-md-8 fondoLoginPaciente">
+    <div class="textoFondo text-light fw-bold" style=" margin-left: 90px; font-size: 60px;">
+      <p class="mt-3">Tu entrada, el inicio</p>
+      <p>hacia el bienestar</p>
+      <p>óptimo</p>
+    </div>
+    <div class="imagenFondo">
+      <!--
+    <img src="../../assets/images/ImagenesGenerales/fotoDoctorPaciente.svg" alt="" style="margin-left: 90px;">
+    -->
+    </div>
+
+  </div>
+</div>

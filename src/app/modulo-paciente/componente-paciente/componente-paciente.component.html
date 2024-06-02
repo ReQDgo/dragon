@@ -1,0 +1,29 @@
+<div class="row">
+  <app-componente-botones-cabecera
+    [tituloCabecera]="''"
+    [botonRetroceder]="true"
+    [botonCancelar]="false"
+    [botonCrearCita]="false"
+    [botonSalirPaciente]="true"
+    [estilosBotonSalirPaciente]="{ 'margin-top': '50px' }"
+  ></app-componente-botones-cabecera>
+</div>
+
+<!-- BOTONES 'PEDIR CITA' Y 'MIS CITAS' -->
+<div
+  class="col-md-12 d-flex flex-column justify-content-center align-center text-center h-50 mt-5"
+>
+  <app-componente-boton-retroceder-continuar
+    [mostrarBotonRetroceder]="false"
+    [buttonText]="'Pedir cita'"
+    [rutaProximoPaso]="'/paciente/pedirCita'"
+    [estiloBotonRetroceder]="{ height: '200px;' }"
+  ></app-componente-boton-retroceder-continuar>
+
+  <app-componente-boton-retroceder-continuar
+    [mostrarBotonRetroceder]="false"
+    [buttonText]="'Mis citas'"
+    [rutaProximoPaso]="'/paciente/misCitas'"
+    [estiloBotonRetroceder]="{ height: '200px;' }"
+  ></app-componente-boton-retroceder-continuar>
+</div>

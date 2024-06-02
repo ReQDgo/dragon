@@ -1,0 +1,11 @@
+<!-- COMPONENTE QUE SE MUESTRA SI HA SUCEDIDO ALGÚN ERROR DURANTE EL PROCESO DE COMPLETACIÓN DE CUALQUIER FORMULARIO -->
+
+<div class="row mt-4">
+    <div class="col-md-12 align-items-center justify-content-center text-center">
+        <img src="../../../../../assets/images/ImagenesGenerales/exclamacionError.svg" width="250px;" style="margin-top: 200px;" alt="">
+        <p class="fs-4" style="margin-top: -50px;">{{textoConfirmacion}}</p>
+        <button class="botonConfirmacion fs-5 mt-2" (click)="redirigir()">
+            {{textoBoton}}
+        </button>
+    </div>
+</div>

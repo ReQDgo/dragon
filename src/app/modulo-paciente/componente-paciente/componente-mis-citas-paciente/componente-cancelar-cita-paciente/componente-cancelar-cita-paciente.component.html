@@ -1,0 +1,20 @@
+<div class="row mx-3 mt-2">
+  <app-componente-botones-cabecera [tituloCabecera]="'Cancelar cita'" [botonRetroceder]="true" [botonCrearCita]="false"
+    [botonCancelar]="true" [botonSalirPaciente]="false" [rutaRetroceder]="'paciente'"
+    [rutaCancelar]="'paciente/misCitas'"></app-componente-botones-cabecera>
+</div>
+
+<div class="row mx-3 mt-2">
+  <div class="col-md-12 eliminacion p-5 d-flex align-center justify-content-center text-center">
+    <div class="pregunta">
+      <p class="fw-bold fs-4">¿Está seguro que desea cancelar la cita</p>
+      <p class="fw-bold fs-4 mt-2">Nº {{ numCita }}?</p>
+
+      <div class="d-flex justify-content-evenly mt-5" style="margin-left: 20px">
+        <a class="btn btn-success botonSI" (click)="cancelarCita()"
+          href="paciente/misCitas/cancelarCitaConfirmacion">Sí</a>
+        <a class="btn btn-danger botonNO" href="paciente/misCitas">Cancelar</a>
+      </div>
+    </div>
+  </div>
+</div>

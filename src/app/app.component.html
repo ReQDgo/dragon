@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Si las rutas NO son de paciente, mostrar el sidebar + el contenido de cada componente (router-outlet) -->
+    <ng-container *ngIf="mostrarBarra; else esPaciente">
+      <div class="col-md-1">
+        <app-barra-padre
+          [style.display]="mostrarBarra ? 'block' : 'none'"
+        ></app-barra-padre>
+      </div>
+      <div class="col-md-11">
+        <router-outlet></router-outlet>
+      </div>
+    </ng-container>
+
+    <!-- Si la ruta es de paciente, el contenido será un col-md-12 sin el sidebar -->
+    <ng-template #esPaciente>
+      <div class="col-md-12 estructuraPaciente">
+        <router-outlet></router-outlet>
+      </div>
+    </ng-template>
+  </div>
+</div>

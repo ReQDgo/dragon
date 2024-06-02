@@ -1,0 +1,6 @@
+<div class="col-md-3 d-flex flex-column" [ngStyle]="{ 'width.px': anchoInforme, 'height.px': alturaInforme }">
+    <p class="mb-2">Informe de la prueba</p>
+    <textarea class="textAreaImg" [id]="id" rows="25" cols="50" [(ngModel)]="textAreaContentInforme" (input)="onTextAreaInput($event)"></textarea>
+
+    <!-----<button id="guardar">Guardar</button>---->
+</div>

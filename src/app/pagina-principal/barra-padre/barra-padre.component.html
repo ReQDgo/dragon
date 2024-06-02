@@ -1,0 +1,26 @@
+<div *ngIf="mostrarBarra" id="barraLateral"
+    class="position-relative d-flex flex-column align-items-center text-center flex-shrink-0 p-3"
+    style="height: 100vh;">
+    <!-- Título y foto de IVO -->
+    <div id="logoIvo"
+        class="position-absolute top-0 start-10 d-flex align-items-center mb-3 mt-2 mb-md-0 me-md-auto text-white">
+        <img src="assets/images/logotipoIvo.png" alt="" class="img-fluid">
+    </div>
+
+    <!-- Iconos de roles -->
+    <app-menu-usuarios id="menus"> </app-menu-usuarios>
+
+    <!-- Icono 'Salir' -->
+    <div id="salir">
+        <a (click)="logout()" class="d-flex flex-column nav-link">
+            <img src="assets/images/salir.svg" alt="" width="43">
+            <p class="d-flex">
+                {{salir}}
+            </p>
+        </a>
+    </div>
+</div>
+
+<!-- Barra lateral que cuenta con el icono del IVO y el icono 'Salir'.
+    Estos elementos son fijos y sólamente varía el componente 'menu-usuarios', donde, dependiendo del rol, se mostrarán unos iconos u otros.
+-->

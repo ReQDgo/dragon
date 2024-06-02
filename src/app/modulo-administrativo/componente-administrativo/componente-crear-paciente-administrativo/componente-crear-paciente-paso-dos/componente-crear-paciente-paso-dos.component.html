@@ -1,0 +1,48 @@
+<app-componente-botones-cabecera 
+[tituloCabecera]="'Crear paciente'"
+[botonRetroceder]="true"
+[botonCancelar]="true"
+[botonCrearCita]="false"
+[botonSalirPaciente]="false"
+[rutaRetroceder]="'administrativo/citas'"
+[rutaCancelar]="'administrativo/citas'"
+
+></app-componente-botones-cabecera>
+
+<app-componente-caja-blanca 
+    [mostrarFormularioPrincipal]="true"
+    [mostrarFormPrincipal]="true"
+    [mostrarFormCrearPaciente]="false"
+
+    [tituloSeccionFormulario]="'Asignar contraseña'"
+    [descripcionTituloFormulario]="'Asignar una contraseña al paciente'"
+    
+    [labelNuevoMedico]="'Asignar contraseña'"
+    [labelNuevaFecha]="'Repetir contraseña'"
+
+    [texto1]="'Información paciente'"
+    [texto2]="'Asignar contraseña'"
+    [texto3]="'Confirmar datos'"
+
+    [mostrarNuevoMedico]="false"
+    [mostrarNuevaFecha]="false"
+    [mostrarNuevaHora]="false"
+
+    [estilosPaso1]="{ 'color': '#b7b7b7'}"
+
+    [estilosPaso2]="{ 'color': '#3b82f6'}"
+    [estilosCuadradoPaso2]="{ 'background-color': '#3b82f6'}"
+
+    [estilosPaso3]="{ 'color': '#b7b7b7'}"
+
+    [estilosPaso4]="{ 'color': '#b7b7b7'}"
+
+    [rutaProximoPaso]="'crearPacientePaso3'"
+    [rutaAnteriorPaso]="'/administrativo/crearPaciente'"
+
+    [mostrarBotonRetroceder]="true"
+    [mostrarFormularioCrearPacientePaso2]="true"
+
+    
+></app-componente-caja-blanca>
+

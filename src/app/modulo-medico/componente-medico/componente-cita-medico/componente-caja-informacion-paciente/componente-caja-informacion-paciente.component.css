@@ -1,0 +1,18 @@
+.col-md-3 {
+  border-radius: 16px;
+  background: #FFF;
+  box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.10), 12px 14px 19px 0px rgba(0, 0, 0, 0.09), 27px 32px 25px 0px rgba(0, 0, 0, 0.05), 48px 57px 30px 0px rgba(0, 0, 0, 0.01), 75px 89px 33px 0px rgba(0, 0, 0, 0.00);
+  width: 353px;
+  height: 97px;
+}
+
+.col-md-3 h5 {
+  color: #414141;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.col-md-3 h5 {
+    color: #414141;
+    font-size: 20px;
+}

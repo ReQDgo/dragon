@@ -1,0 +1,29 @@
+<div class="row">
+  <app-componente-botones-cabecera [tituloCabecera]="'Modificar Cita - ' + nombrePaciente" [botonRetroceder]="true"
+    [botonCancelar]="true" [botonCrearCita]="false" [botonSalirPaciente]="false"
+    [rutaRetroceder]="'administrativo/citas'" [rutaCancelar]="'administrativo/citas'"></app-componente-botones-cabecera>
+</div>
+
+<div class="row eliminacion">
+
+
+  <div class="row">
+    <app-componente-pasos-formulario [texto1]="'Modificar datos'" [texto2]="'Confirmar modificación'"
+      [estilosPaso1]="{ color: '#b7b7b7' }" [estilosPaso2]="{ color: '#3b82f6' }"
+      [estilosCuadradoPaso2]="{ 'background-color': '#3b82f6' }"
+      [mostrarUltimaPregunta]="false"></app-componente-pasos-formulario>
+  </div>
+
+  <div class="row">
+
+    <div class="pregunta text-center">
+      <p class="fw-bold fs-4">¿Estás seguro que desea modificar la cita</p>
+      <p class="fw-bold fs-4 mt-2">de <span [innerHTML]="nombrePaciente"></span> ?</p>
+
+      <div class="d-flex mt-5 justify-content-center">
+        <a class="btn btn-success botonSI mx-5" (click)="actualizarCita()">Sí</a>
+        <a class="btn btn-danger botonNO" href="administrativo/citas">Cancelar</a>
+      </div>
+    </div>
+  </div>
+</div>

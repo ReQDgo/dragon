@@ -1,0 +1,42 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
+
+
+<div class="contenedor d-flex flex-column">
+  <mat-card class="horario">
+    <mat-calendar [(selected)]="selected" (selectedChange)="onDateSelected($event)"></mat-calendar>
+  </mat-card>
+
+
+  <div class="contenedor-notas">
+    <h4>
+      <!-- Usando metodos del calendar, se muestra la fecha de la manera que se visualizo. -->
+      {{selected?.getDate()}}
+      {{selected?.toLocaleDateString(undefined, { month: 'long' })}}
+      {{selected?.getFullYear()}}
+    </h4>
+    <div class="contenedorNotasGeneral" *ngIf="citasDelDiaSeleccionado!=''  &&  citasDelDiaSeleccionado!=null; else sinCitas">
+      <div *ngFor="let cita of citasDelDiaSeleccionado" class="fila d-flex flex-row">
+        <img src="../../../../../assets/images/ImagenesMedico/linea-horario.svg" alt="">
+        <div class="horas d-flex flex-column justify-content-between">
+          <p>{{ mostrarHoraFormateada(cita.hora) }}</p>
+          <p>{{ sumarUnaHora(cita.hora) }}</p>
+        </div>
+        <div class="notas d-flex justify-content-center bg-primary-subtle">
+          <h1 class="rounded fw-bold text-center">Cita con,
+            <span class="text-primary">
+              {{cita.nombre_completo_paciente}}
+            </span>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <ng-template #sinCitas>
+      <div class="alert alert-warning text-center">
+        <h5 class="text-dark fw-bold">
+          <i class="bi bi-question-lg"></i> No hay ninguna cita asignada a este dia.
+        </h5>
+      </div>
+    </ng-template>
+
+  </div>
+</div>

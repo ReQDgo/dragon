@@ -1,0 +1,22 @@
+h5 {
+  font-weight: bold;
+}
+
+.info {
+  font-weight: normal;
+  margin-left: 10px;
+}
+
+input[type="submit"] {
+  background-color: #3b82f6;
+  height: 50px;
+  width: 160px;
+  font-size: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: none;
+  border-radius: 7px;
+}

@@ -1,0 +1,26 @@
+::-webkit-input-placeholder {
+  color: #b8bec9;
+}
+
+.asterisco {
+  color: #f00;
+}
+
+input[type="checkbox"] {
+  border: 8px solid #e2e7eb;
+  width: 17px;
+  height: 17px;
+}
+
+label {
+  color: #838383;
+}
+.labelPaciente{
+
+position: fixed;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+margin-top: -10px;
+}

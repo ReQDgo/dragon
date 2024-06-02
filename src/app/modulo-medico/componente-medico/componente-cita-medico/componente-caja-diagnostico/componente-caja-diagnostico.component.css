@@ -1,0 +1,63 @@
+.col-md-3 {
+  border-radius: 24px;
+  background: #FFF;
+  box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.10), 9px 10px 13px 0px rgba(0, 0, 0, 0.09), 20px 22px 18px 0px rgba(0, 0, 0, 0.05), 36px 39px 21px 0px rgba(0, 0, 0, 0.01), 57px 60px 23px 0px rgba(0, 0, 0, 0.00);
+  width: 800px;
+  height: 600px;
+  margin-right: 90px;
+}
+
+.col-md-3 p {
+  color: #414141;
+  font-size: 32px;
+  font-weight: bold;
+
+}
+
+#textArea {
+  color: #515151;
+  margin: 30px;
+  border-radius: 12px;
+  padding: 20px;
+  resize: none;
+}
+
+#textArea:focus {
+  outline: none;
+  border: 3px solid #3376E2;
+}
+
+p {
+  margin: 30px;
+}
+
+
+button {
+  margin-top: 20px;
+  color: #FFF;
+  width: 182px;
+  height: 74px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.10), 9px 10px 13px 0px rgba(0, 0, 0, 0.09), 20px 22px 18px 0px rgba(0, 0, 0, 0.05), 36px 39px 21px 0px rgba(0, 0, 0, 0.01), 57px 60px 23px 0px rgba(0, 0, 0, 0.00);
+  font-size: 24px;
+  margin-left: 32px;
+}
+
+.guardar,
+.generar-pdf-azul {
+  background: #3B82F6;
+  margin-right: 100px;
+}
+
+.editar-diagn {
+  width: 267px;
+  height: 74px;
+  background: #FFC32B;
+}
+
+.guardar-edicion {
+  margin-right: 100px;
+  width: 267px;
+  height: 74px;
+  background: #3B82F6;
+}

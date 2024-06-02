@@ -1,0 +1,15 @@
+<div class="row mt-4">
+  <div class="d-flex justify-content-center">
+    <button type="button" class="botonRetroceso btn d-flex flex-row" [ngStyle]="estiloBotonRetroceder" *ngIf="mostrarBotonRetroceder ">
+      <div class="d-flex h-100">
+        <img width="50px" src="../../../assets/images/ImagenesGenerales/flechaRetrocesoColorBlanco.svg" alt="" style="margin-left: -30px;"/>
+        <p routerLink="{{rutaAnteriorPaso}}">Retroceder</p>
+      </div>
+    </button>
+
+    <button type="submit" class="botonContinuar btn d-flex flex-row mx-5" [ngStyle]="estiloBotonContinuar">
+      <a routerLink="{{rutaProximoPaso}}">{{buttonText}}</a>
+    </button>
+
+  </div>
+</div>

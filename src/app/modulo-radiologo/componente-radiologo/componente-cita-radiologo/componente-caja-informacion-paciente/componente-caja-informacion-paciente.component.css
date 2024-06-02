@@ -1,0 +1,17 @@
+.col-md-3 {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 3px 5px 13px 0px rgba(0, 0, 0, 0.10), 12px 20px 24px 0px rgba(0, 0, 0, 0.09), 27px 46px 32px 0px rgba(0, 0, 0, 0.05), 49px 82px 38px 0px rgba(0, 0, 0, 0.01), 76px 128px 42px 0px rgba(0, 0, 0, 0.00);
+    width: 353px;
+    height: 97px;
+  }
+
+  .col-md-3 p{
+    color: #414141;
+    font-size: 20px;
+    font-weight: bolder;
+  }
+
+  .espacio{
+    margin-bottom: 100px;
+  }

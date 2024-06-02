@@ -1,0 +1,22 @@
+<!-- COMPONENTE USADO EN 'CREAR CITA' DE ADMINISTRATIVO -->
+
+<div *ngIf="mostrarResumenDatosCrearCita">
+
+  <div class="container ">
+    <h2 class="fw-bold">Resumen de los datos</h2>
+    <div >
+      <h5><strong>Dni:</strong> <span class="info">{{ dni }}</span></h5>
+    </div>
+    
+    <div>
+      <h5><strong>Fecha:</strong> <span class="info">{{ fecha }}</span></h5>
+      <h5><strong>Hora:</strong> <span class="info">{{ hora }}</span></h5>
+      <h5><strong>Radiologo:</strong> <span class="info">{{ nombreRadiologo }}</span></h5>
+    </div>    
+
+    <form action="" #myFormu="ngForm" class="mt-4">
+      
+      <input type="submit" value="Continuar" (click)="continuarAconfirmacion()"> 
+    </form>
+  </div>
+</div>

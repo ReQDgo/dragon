@@ -1,0 +1,55 @@
+.informe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  /*  height: 30vh;*/
+  width: 45vw;
+  border-radius: 24px;
+  box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.1),
+    9px 10px 13px 0px rgba(0, 0, 0, 0.09),
+    20px 22px 18px 0px rgba(0, 0, 0, 0.05),
+    36px 39px 21px 0px rgba(0, 0, 0, 0.01), 57px 60px 23px 0px rgba(0, 0, 0, 0);
+}
+
+.informe p {
+  color: #414141;
+  font-size: 22px;
+  font-weight: bold;
+  align-self: flex-start;
+  margin-left: 5%;
+}
+
+.textarea {
+  color: rgb(87, 87, 87);
+  box-sizing: border-box;
+  resize: none;
+  border: 3px solid #e2e7eb;
+  border-radius: 6px;
+  width: 90%;
+  margin: 10px;
+  margin-top: -8px;
+  padding: 20px;
+}
+
+.textarea:focus {
+  outline: none;
+  border: 3px solid #3376e2;
+}
+
+
+
+.descargarPDF {
+  border-radius: 6px;
+  border: 1px #c6cbd6 solid;
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  /* Resolución móvil */
+  .informe {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+}

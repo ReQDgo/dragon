@@ -1,0 +1,46 @@
+.col-md-12 {
+  background-color: white;
+  height: 78vh;
+  border-radius: 6px;
+  box-shadow: -0.088px 2.398px 8.288px 0px rgba(0, 0, 0, 0.04),
+    -0.439px 11.992px 51px 0px rgba(0, 0, 0, 0.07);
+}
+
+#ajustarTituloYparrafoYformulario {
+  margin-top: 40px;
+}
+
+.asterisco {
+  color: #f00;
+}
+
+input[type="submit"] {
+  height: 50px;
+  width: 160px;
+  font-size: 18px;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  margin-left: 50px;
+}
+
+.error-message {
+  color: #dc3545;
+}
+
+.success-message {
+  color: green;
+}
+
+.botonContinuarDNI {
+  /*  background-color: #3b82f6;*/
+  height: 50px;
+  width: 160px;
+  font-size: 18px;
+  color: white;
+  border: none;
+  border-radius: 7px;
+}
+.formularioCrearCitaPaso2{
+  margin-left: 90px;
+}

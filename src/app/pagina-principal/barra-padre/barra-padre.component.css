@@ -1,0 +1,11 @@
+#barraLateral {
+  background-color: white;
+}
+
+#menus {
+  margin-top: 140px;
+}
+
+#salir {
+  cursor: pointer;
+}

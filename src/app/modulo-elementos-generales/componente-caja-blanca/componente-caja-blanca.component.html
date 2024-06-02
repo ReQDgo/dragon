@@ -1,0 +1,407 @@
+<div class="row mt-1">
+  <div class="col-md-12">
+    <!--DIV PARA MOSTRAR LOS PASOS DEL FORMULARIO-->
+    <div *ngIf="mostrarPasosFormulario">
+      <app-componente-pasos-formulario [mostrarUltimaPregunta]="mostrarUltimaPregunta" [texto1]="texto1"
+        [texto2]="texto2" [texto3]="texto3" [texto4]="texto4" [texto5]="texto5" [estilosPaso1]="estilosPaso1"
+        [estilosCuadradoPaso1]="estilosCuadradoPaso1" [estilosPaso2]="estilosPaso2"
+        [estilosCuadradoPaso2]="estilosCuadradoPaso2" [estilosPaso3]="estilosPaso3"
+        [estilosCuadradoPaso3]="estilosCuadradoPaso3" [estilosPaso4]="estilosPaso4"
+        [estilosCuadradoPaso4]="estilosCuadradoPaso4" [estilosPaso5]="estilosPaso5"
+        [estilosCuadradoPaso5]="estilosCuadradoPaso5"></app-componente-pasos-formulario>
+    </div>
+
+    <div id="ajustarTituloYparrafoYformulario"
+      class="w-100 d-flex justify-content-center align-items-center flex-column">
+      <!-- DIV PARA MOSTRAR EL TITULO Y DESCRIPCION DE CADA FORMULARIO -->
+      <div class="d-flex align-items-center justify-content-center" style="height: 100px">
+        <div class="justify-content-center text-center align-center">
+          <h4 style="color: #3b82f6">
+            {{ tituloSeccionFormulario }}
+          </h4>
+          <p style="color: #9e9e9e">{{ descripcionTituloFormulario }}</p>
+        </div>
+      </div>
+
+      <div *ngIf="mostrarFormularioCrearPacientePaso1">
+        <form class="was-validated" action="" (ngSubmit)="formCrearPacientePaso1(formulario)" #formulario="ngForm"
+          [ngClass]="{ 'formulario-incorrecto': !esFormularioValido(formulario) }">
+          <div class="container-fluid" style="margin-top: -80px;">
+            <div class="row">
+              <!-- Columna Izquierda -->
+              <div class="col-md-6">
+                <h3 class="fw-bold mb-4">Información Personal</h3>
+                <div class="row">
+                  <!-- Subcolumna Izquierda -->
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="nombre" class="form-label">Nombre<span class="ms-1 asterisco">*</span></label>
+                      <!-- Campo de Nombre -->
+                      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre"
+                        [(ngModel)]="nombre" required>
+
+                      <!-- Mensaje de error -->
+                      <div
+                        *ngIf="formulario.controls['nombre'].invalid && (formulario.controls['nombre'].dirty || formulario.controls['nombre'].touched)"
+                        class="error-message">
+                        El nombre es obligatorio.
+                      </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="pregunta2" class="form-label">Primer Apellido<span
+                          class="ms-1 asterisco">*</span></label>
+                      <input type="text" class="form-control" id="pregunta2" name="pregunta2"
+                        placeholder="Primer apellido" [(ngModel)]="primer_apellido" required>
+
+                      <!-- Mensaje de error -->
+                      <div
+                        *ngIf="formulario.controls['pregunta2'].invalid && (formulario.controls['pregunta2'].dirty || formulario.controls['pregunta2'].touched)"
+                        class="error-message">
+                        El primer apellido es obligatorio.
+                      </div>
+
+                    </div>
+
+
+                    <div class="mb-3">
+                      <label for="pregunta3" class="form-label">Segundo Apellido</label>
+                      <input type="text" class="form-control" id="pregunta3" name="pregunta3"
+                        placeholder="Segundo apellido" [(ngModel)]="segundo_apellido">
+
+                      <!-- Mensaje de error -->
+                      <div
+                        *ngIf="formulario.controls['pregunta3'].invalid && (formulario.controls['pregunta3'].dirty || formulario.controls['pregunta3'].touched)"
+                        class="error-message">
+                        El segundo apellido es incorrecto.
+                      </div>
+
+                    </div>
+
+
+                    <div class="mb-3">
+                      <label for="pregunta4" class="form-label">Fecha Nacimiento<span
+                          class="ms-1 asterisco">*</span></label>
+                      <input type="date" class="form-control" id="pregunta4" name="pregunta4"
+                        placeholder="Fecha Nacimiento" [(ngModel)]="fechaNacimiento" required>
+                    </div>
+                  </div>
+
+                  <!-- Subcolumna Derecha -->
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="pregunta5" class="form-label">Número Teléfono<span
+                          class="ms-1 asterisco">*</span></label>
+                      <input type="text" class="form-control" id="pregunta5" name="pregunta5"
+                        placeholder="Número Télefono" [(ngModel)]="telefono" pattern="[0-9]{9}" required>
+
+                      <!-- Mensaje de error -->
+                      <div
+                        *ngIf="formulario.controls['pregunta5'].invalid && (formulario.controls['pregunta5'].dirty || formulario.controls['pregunta5'].touched)"
+                        class="error-message">
+                        El teléfono debe tener 9 dígitos.
+                      </div>
+
+                    </div>
+
+
+                    <div class="mb-3">
+                      <label for="pregunta6" class="form-label">DNI<span class="ms-1 asterisco">*</span></label>
+                      <input type="text" class="form-control" id="pregunta6" name="pregunta6" placeholder="DNI"
+                        [(ngModel)]="dni" pattern="[0-9]{8}[a-zA-Z]" required>
+
+                      <!-- Mensaje de error -->
+                      <div
+                        *ngIf="formulario.controls['pregunta6'].invalid && (formulario.controls['pregunta6'].dirty || formulario.controls['pregunta6'].touched)"
+                        class="error-message">
+                        El DNI es incorrecto.
+                      </div>
+
+                    </div>
+
+
+                    <div class="mb-3">
+                      <label for="pregunta7" class="form-label">Sexo<span class="ms-1 asterisco">*</span></label>
+                      <select id="pregunta7" name="pregunta7" class="form-select" [(ngModel)]="sexo" required>
+
+                        <!-- Mensaje de error -->
+                        <div
+                          *ngIf="formulario.controls['pregunta7'].invalid && (formulario.controls['pregunta7'].dirty || formulario.controls['pregunta7'].touched)"
+                          class="error-message">
+                          Por favor, selecciona una opción.
+                        </div>
+
+                        <option value="">Selecciona una opción</option>
+                        <option value="hombre">Hombre</option>
+                        <option value="mujer">Mujer</option>
+                      </select>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="pregunta8" class="form-label">Correo Electrónico<span
+                          class="ms-1 asterisco">*</span></label>
+                      <input type="email" class="form-control" id="pregunta8" name="pregunta8"
+                        placeholder="Correo Electrónico" [(ngModel)]="email" required>
+
+                      <!-- Mensaje de error -->
+                      <div
+                        *ngIf="formulario.controls['pregunta8'].invalid && (formulario.controls['pregunta8'].dirty || formulario.controls['pregunta8'].touched)"
+                        class="error-message">
+                        El correo electrónico es inválido.
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Columna Derecha -->
+              <div class="col-md-6">
+                <h3 class="fw-bold mb-4">Dirección Personal</h3>
+                <div class="row">
+                  <!-- Subcolumna Izquierda -->
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="pregunta9" class="form-label">Província<span class="ms-1 asterisco">*</span></label>
+                      <select id="pregunta9" name="pregunta9" class="form-select"
+                        (change)="actualizarPoblaciones($event)" [(ngModel)]="provincia" required>
+                        <option value="">Selecciona una provincia</option>
+                        <option *ngFor="let provinciaItem of provinciasPoblaciones" [value]="provinciaItem.provincia">{{
+                          provinciaItem.provincia }}</option>
+                      </select>
+                    </div>
+
+
+                    <div class="mb-3">
+                      <label for="pregunta10" class="form-label">Código Postal<span
+                          class="ms-1 asterisco">*</span></label>
+                      <input type="text" class="form-control" id="pregunta10" name="pregunta10"
+                        placeholder="Código postal" [(ngModel)]="cp" pattern="[0-9]{5}" required>
+
+                      <!-- Mensaje de error -->
+                      <div
+                        *ngIf="formulario.controls['pregunta10'].invalid && (formulario.controls['pregunta10'].dirty || formulario.controls['pregunta10'].touched)"
+                        class="error-message">
+                        El código postal es incorrecto.
+                      </div>
+
+                    </div>
+
+
+
+                    <div class="mb-3">
+                      <label for="pregunta11" class="form-label">Número<span class="ms-1 asterisco">*</span></label>
+                      <input type="text" class="form-control" id="pregunta11" name="pregunta11" placeholder="Número"
+                        [(ngModel)]="numero" required>
+
+                      <!-- Mensaje de error -->
+                      <div
+                        *ngIf="formulario.controls['pregunta11'].invalid && (formulario.controls['pregunta11'].dirty || formulario.controls['pregunta11'].touched)"
+                        class="error-message">
+                        El número es obligatorio.
+                      </div>
+
+                    </div>
+
+
+                    <div class="mb-3">
+                      <label for="pregunta12" class="form-label">Puerta</label>
+                      <input type="text" class="form-control" id="pregunta12" name="pregunta12" placeholder="Puerta"
+                        [(ngModel)]="puerta">
+                    </div>
+                  </div>
+
+                  <!-- Subcolumna Derecha -->
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="pregunta12" class="form-label">Población<span class="ms-1 asterisco">*</span></label>
+                      <select id="pregunta12" name="pregunta12" class="form-select" [(ngModel)]="poblacion" required>
+                        <option value="">Selecciona una población</option>
+                        <option *ngFor="let poblacionItem of poblacionesDisponibles" [value]="poblacionItem">{{
+                          poblacionItem }}</option>
+                      </select>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="pregunta13" class="form-label">Dirección<span class="ms-1 asterisco">*</span></label>
+                      <input type="text" class="form-control" id="pregunta13" name="pregunta13" placeholder="Dirección"
+                        [(ngModel)]="direccion" required>
+
+                      <!-- Mensaje de error -->
+                      <div
+                        *ngIf="formulario.controls['pregunta13'].invalid && (formulario.controls['pregunta13'].dirty || formulario.controls['pregunta13'].touched)"
+                        class="error-message">
+                        La dirección es obligatoria.
+                      </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                      <label for="pregunta14" class="form-label">Piso</label>
+                      <input type="text" class="form-control" id="pregunta14" name="pregunta14" placeholder="Piso"
+                        [(ngModel)]="piso">
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="pregunta15" class="form-label">Escalera</label>
+                      <input type="text" class="form-control" id="pregunta15" name="pregunta15" placeholder="Escalera"
+                        [(ngModel)]="escalera">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center mt-4">
+            <input type="submit" value="Continuar" class="btn-primary" [disabled]="formulario.invalid"
+              [ngStyle]="{'background-color': formularioIncorrecto ? '#3b82f6' : 'rgba(59, 130, 246, 0.6)'}">
+          </div>
+
+        </form>
+      </div>
+
+      <div *ngIf="mostrarFormularioCrearPacientePaso2">
+        <form class="was-validated" (ngSubmit)="formCrearPacientePaso2(formulario)" action="" #formulario="ngForm">
+          <div class="mb-3">
+            <label for="nuevoMedico" class="form-label">{{labelNuevoMedico}}<span
+                class="ms-1 asterisco">*</span></label>
+            <input type="password" class="form-control" id="pregunta15" name="pregunta15"
+              placeholder="Escribir contraseña" [(ngModel)]="password" required pattern=".{8,}">
+
+            <div
+              *ngIf="formulario.controls['pregunta15'].invalid && (formulario.controls['pregunta15'].dirty || formulario.controls['pregunta15'].touched)"
+              class="error-message">
+              La contraseña debe tener al menos 8 caracteres.
+            </div>
+          </div>
+        <input type="submit" value="Continuar" class="btn-primary" 
+          [ngStyle]="{'background-color': formularioIncorrecto ? '#3b82f6' : 'rgba(59, 130, 246, 0.6)'}">
+        </form>
+      </div>
+
+
+
+      <!--DIV PARA MOSTRAR EL RESUMEN DE LOS DATOS-->
+      <div *ngIf="mostrarResumenDatosCrearCita">
+
+
+        <app-componente-resumen-datos-crear-cita-paso-tres
+          [mostrarResumenDatosCrearCita]="mostrarResumenDatosCrearCita"></app-componente-resumen-datos-crear-cita-paso-tres>
+      </div>
+
+      <div *ngIf="mostrarResumenDatosCrearPaciente" class="">
+        <app-componente-resumen-datos-paciente [mostrarResumenDatosCrearPaciente]="
+          mostrarResumenDatosCrearPaciente
+          "></app-componente-resumen-datos-paciente>
+      </div>
+
+      <!--DIV PARA MOSTRAR EL FORMULARIO (LUEGO SE ESPECIFICARA CUAL DE LOS DOS SE DESEA MOSTRAR, SI EL DE CREACION DE UN PACIENTE O EL FORMULARIO NORMAL EDITABLE)-->
+      <div *ngIf="mostrarFormularioPrincipal">
+        <app-componente-formulario [labelNuevaFecha]="labelNuevaFecha" [labelNuevaHora]="labelNuevaHora"
+          [labelNuevoMedico]="labelNuevoMedico" [mostrarFormCrearPaciente]="mostrarFormCrearPaciente"
+          [mostrarFormPrincipal]="mostrarFormPrincipal" [mostrarNuevoMedico]="mostrarNuevoMedico"
+          [mostrarNuevaFecha]="mostrarNuevaFecha" [mostrarNuevaHora]="mostrarNuevaHora"
+          [rutaProximoPaso]="rutaProximoPaso" [rutaAnteriorPaso]="rutaAnteriorPaso"
+          [mostrarBotonRetroceder]="mostrarBotonRetroceder" [mostrarInputCuatro]="mostrarInputCuatro"
+          [estilosFormulario]="estilosFormulario" [estiloBotonContinuar]="estiloBotonContinuar"
+          [estiloBotonRetroceder]="estiloBotonRetroceder" [mostrarCheckboxesPedirCita]="mostrarCheckboxesPedirCita"
+          [mostrarTercerCheckboxPedirCita]="mostrarTercerCheckboxPedirCita"
+          [mostrarTercerLabelPedirCita]="mostrarTercerLabelPedirCita"
+          [estiloCheckboxesPaciente]="estiloCheckboxesPaciente" [textoLabel1]="textoLabel1" [textoLabel2]="textoLabel2"
+          [textoLabel3]="textoLabel3" [valueCheckbox1]="valueCheckbox1" [valueCheckbox2]="valueCheckbox2"
+          [valueCheckbox3]="valueCheckbox3" [mostrarEleccionMedico]="mostrarEleccionMedico"
+          [mostrarInputsPedirCita]="mostrarInputsPedirCita"></app-componente-formulario>
+      </div>
+
+
+      <!--
+      <div *ngIf="mostrarConfirmacionModificarCita">
+        <app-componente-confirmacion [textoConfirmacion]="textoConfirmacion" [textoBoton]="textoBoton"
+          [ruta]="ruta"></app-componente-confirmacion>
+      </div>
+-->
+      <!-- FORMULARIO CREAR CITA PASO 1 -->
+      <div *ngIf="crearCitaPaso1">
+        <div [ngStyle]="estilosFormulario">
+          <div class="row">
+            <div class="container mt-5">
+              <div class="row justify-content-center">
+                <div class="col-md-6">
+                  <form
+                    style="width: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center;"
+                    (ngSubmit)="comprobarDniCrearCita()" #miFormulario="ngForm" class="was-validated">
+                    <div class="form-group">
+                      <label for="dni" class="form-label fw-bold">DNI del paciente:<span
+                          class="ms-1 asterisco fw-bold">*</span></label>
+                      <input type="text" class="form-control" name="dni" [(ngModel)]="crearCitaPaso1Formulario.dni"
+                        required pattern="[0-9]{8}[a-zA-Z]" #dniInput="ngModel" />
+                      <div class="valid-feedback">Formato del DNI válido</div>
+                      <div class="invalid-feedback">Introduce un DNI con formato válido.</div>
+                    </div>
+                    <button type="submit" class="btn mt-4 botonContinuarDNI" [disabled]="miFormulario.invalid"
+                      [style.background-color]="miFormulario.valid ? '#3b82f6' : 'rgba(59, 130, 246, 0.6)'">Continuar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FIN FORMULARIO CREAR CITA PASO 1 -->
+
+      <!-- FORMULARIO CREAR CITA PASO 2 -->
+      <div *ngIf="crearCitaPaso2">
+        <div [ngStyle]="estilosFormulario">
+          <div class="container mt-2">
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <div class="formularioCrearCitaPaso2">
+                  <form [formGroup]="miFormCrearCita" class="was-validated" (ngSubmit)="enviarFormularioPaso2()"
+                    #miFormulario="ngForm">
+                    <!-- Fecha -->
+                    <div class="form-group">
+                      <label for="fecha" class="fw-bold">Fecha<span class="ms-1 asterisco fw-bold">*</span></label> <br>
+                      <input type="text" placeholder="2024-02-01" name="fecha" class="text-center form-control w-75"
+                        formControlName="fecha">
+                    </div>
+
+                    <!-- Hora -->
+                    <div class="form-group mt-3">
+                      <label for="hora" class="fw-bold">Hora<span class="ms-1 asterisco fw-bold">*</span></label><br>
+                      <input type="text" name="hora" class="text-center form-control w-75" placeholder="10:30"
+                        formControlName="hora">
+                    </div>
+
+                    <!-- Médico -->
+                    <div class="form-group mt-3">
+                      <label for="medico" class="fw-bold">Radiologo<span class="ms-1 asterisco fw-bold">*</span></label>
+                      <select formControlName="radiologos" class="form-select w-75" id="medico" name="radiologo">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <!-- Solo utiliza [ngValue], elimina [value] -->
+                        <option *ngFor="let radiologo of radiologos" [ngValue]="radiologo.id_radiologo">{{
+                          radiologo.nombre_completo }}
+                        </option>
+                      </select>
+                    </div>
+
+                    <div class="row mt-5">
+                      <input type="submit" class="btn btn-primary" value="Continuar">
+                      <!--  <input type="submit" value="Continuar" [disabled]="miFormCrearCita.invalid"
+                        [style.background-color]="miFormCrearCita.valid ? '#3b82f6' : 'rgba(59, 130, 246, 0.6)'">
+                    -->
+                    </div>
+
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FIN FORMULARIO CREAR CITA PASO 2 -->
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.col-md-11 {
+  background-image: url(../assets/images/ImagenesGenerales/FondoDePantalla.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 40px;
+}
+
+.estructuraPaciente {
+  background-image: url("../assets/images/ImagenesGenerales/FondoDePantalla.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+}

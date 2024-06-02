@@ -1,0 +1,51 @@
+.backone {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.19);
+    backdrop-filter: blur(3.5px);  position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .contenedor {
+    z-index: 99;
+    width: 906px;
+    height: 673px;
+    border-radius: 13px;
+    border: 3px solid #E1E1E1;
+    background: #FFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .contenedor p {
+    color: #414141;
+    font-size: 32px;
+    text-align: center;
+  }
+  
+  button {
+    color: #FFF;
+    font-size: 22px;
+    border-radius: 6px;
+    margin-left: 42px;
+  }
+  
+  .botonSal {
+    background: #FF0000;
+    width: 300px;
+    height: 59px;
+  }
+  
+  .botonCont {
+    background: #3B82F6;
+    width: 313px;
+    height: 59px;
+  }
+  

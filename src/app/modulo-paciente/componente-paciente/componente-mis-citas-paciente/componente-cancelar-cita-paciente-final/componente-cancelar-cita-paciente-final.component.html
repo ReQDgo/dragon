@@ -1,0 +1,19 @@
+<div class="row mx-3 mt-2">
+  <app-componente-botones-cabecera
+    [tituloCabecera]="'Cancelar cita'"
+    [botonRetroceder]="true"
+    [botonCrearCita]="false"
+    [botonCancelar]="false"
+    [botonSalirPaciente]="false"
+    [rutaRetroceder]="'paciente/misCitas'"
+    [rutaCancelar]="'paciente/misCitas'"
+  ></app-componente-botones-cabecera>
+</div>
+
+<div class="row mx-3 mt-2">
+  <app-componente-confirmacion
+    [textoConfirmacion]="'Cita cancelada correctamente'"
+    [textoBoton]="'Volver a Mis citas'"
+    [ruta]="'paciente/misCitas'"
+  ></app-componente-confirmacion>
+</div>

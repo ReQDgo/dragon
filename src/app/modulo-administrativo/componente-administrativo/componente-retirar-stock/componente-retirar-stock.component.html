@@ -1,0 +1,106 @@
+<app-componente-botones-cabecera
+    [tituloCabecera]="almacen ? 'Almacén de Materiales - ' + almacen.nombre : 'Almacén de Materiales'"
+    [botonRetroceder]="true" [botonCancelar]="false" [botonCrearCita]="false" [botonSalirPaciente]="false"
+    [rutaRetroceder]="'administrativo/citas'" [rutaCancelar]="'administrativo/citas'">
+</app-componente-botones-cabecera>
+
+<div class="row">
+    <div class="col-md-12 d-flex flex-row justify-content-center align-items-center" style="height: 750px;">
+        <div class="card" *ngIf="!almacen">
+            <div class="card-body">
+                <div class="d-flex justify-content-center align-items-center">
+                    <h4 class="card-title" style="font-weight: 700;">Código de Almacén</h4>
+                </div>
+                <div class="form-group mt-3 d-flex flex-column justify-content-center align-items-center">
+                    <input type="text" class="form-control" id="codigoAlmacen" placeholder="Ingresar código"
+                        [(ngModel)]="codigoAlmacen">
+                </div>
+                <div class="d-flex justify-content-center mt-4">
+                    <button class="btn btn-primary" (click)="buscarAlmacenPorCodigo()">Comprobar</button>
+                </div>
+            </div>
+        </div>
+        <div style="width: 100%; height: 100%; padding: 0px;" *ngIf="materiales && materiales.length > 0" class="d-flex justify-content-between">
+            <div id="contenedor-materiales" style="width: 65%;" class="container bg-white">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-items-center" *ngFor="let material of materiales">
+                        <div class="material-card col-4 p-2 mb-4" style="width: 250px; height: 340px; border-radius: 12px;">
+                            <div class="image-container d-flex justify-content-center align-items-center" style="height: 110px;">
+                                <img class="material-img rounded-circle img-fluid" [src]="material.imagenes_material" alt="Imagen del material">
+                            </div>
+                            <div class="material-body">
+                                <div class="d-flex justify-content-start align-items-start flex-column">
+                                    <h5 class="material-title">{{ material.nombre_producto_hospital }}</h5>
+                                    <div class="d-flex">
+                                        <img src="assets/images/ImagenesAdministrativo/tick_existencias.svg"
+                                            alt="Tick Existencias"
+                                            style="width: 20px; height: 20px; margin-right: 5px;">
+                                        <p style="font-size: 15px; color: #00980f;">{{ material.existencias }} unidades
+                                        </p>
+                                    </div>
+                                    <div
+                                        style="height: 20px; width: 100%; display: flex; justify-content: space-evenly; flex-direction: column; align-items: start;">
+                                        <div>
+                                            <p style="font-size: 15px; color: #BCBCBC;">{{material.sku}}</p>
+                                            <p style="font-size: 15px; color: #787878; margin-top: -10px;">{{material.nombre_proveedor}}</p>
+                                        </div>
+                                        <div style="width: 100%;">
+                                            <button class="btn btn-retirar mt-2 d-flex align-items-center justify-content-center" (click)="abrirModal(material)">
+                                                <img src="assets/images/ImagenesAdministrativo/retirar-existencias.svg" alt="Retirar Existencias" style="width: 30px; height: 30px; margin-right: 7px;"> Retirar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 33%;" class="d-flex flex-column justify-content-around align-items-center">
+                <div style="width: 100%; height: 45%; margin-bottom: 20px; overflow-y: hidden; position: relative; " id="historial_en_camino">
+                    <div class="p-4" style="overflow-y: scroll;">
+                        <h4 class="mb-3"><span><img src="assets/images/ImagenesAdministrativo/proximas-entregas.svg" alt="" width="30px" style="margin-right: 15px;"></span>Pendientes de Recepción</h4>
+                        <div>
+                            <table id="tablaHistorialPedidos" class="table" style="overflow-y: scroll;">
+                                <thead>
+                                    <tr>
+                                        <th>Fecha de Pedido</th>
+                                        <th>Producto</th>
+                                        <th>Cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let pedido of historialPedidos">
+                                        <td>{{ pedido.fecha_pedido }}</td>
+                                        <td>{{ pedido.material.nombre_producto_hospital }}</td>
+                                        <td>{{ pedido.cantidad }} ud</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 100%; height: 40%; overflow-x: auto; overflow-y: hidden; display: flex; justify-content: start; align-items: around; flex-direction: column;"
+                    class="p-4" id="resumen_retirada">
+                    <h4>Material a retirar:</h4>
+                    <div class="d-flex flex-row" style="height: 185px;">
+                        <div *ngFor="let material of materialesRetirados"
+                            class="m-2 d-flex flex-column align-items-start justify-content-start position-relative"
+                            style="width: 175px; height: 100%; flex-shrink: 0;">
+                            <div class="material-retirado" style="width: 100%; height: 100%;">
+                                <img src="assets/images/ImagenesAdministrativo/icon-material-retirado.svg" alt="" width="30px" style="margin-bottom: 10px;">
+                                <h6 style="font-weight: 600; font-size: 17px; color: #484747;">{{ material.nombre }}</h6>
+                                <span style="color:#4B4B4B; font-size: 14px;">{{ material.cantidad }} unidades</span>
+                                <span style="color:#BCBCBC; font-size: 14px; margin-top: 5px;"><span><img src="assets/images/ImagenesAdministrativo/icon-sku.svg" alt="" style="margin-right: 7px;"></span>{{ material.sku }}</span>
+                            </div>
+                            <div class="eliminar-material" (click)="eliminarMaterial(material)">
+                                <span style="position: absolute; top: 2px;"><img src="assets/images/ImagenesAdministrativo/icon-cruz-tarjeta.svg" alt=""></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary mt-3" (click)="consultarYActualizarExistencias()">Retirar del Almacén</button>
+            </div>
+        </div>
+    </div>
+</div>

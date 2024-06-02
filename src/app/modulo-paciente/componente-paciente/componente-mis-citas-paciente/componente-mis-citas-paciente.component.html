@@ -1,0 +1,23 @@
+<div class="row">
+  <app-componente-botones-cabecera
+    [tituloCabecera]="'Mis citas'"
+    [botonRetroceder]="true"
+    [botonCancelar]="false"
+    [botonCrearCita]="false"
+    [botonSalirPaciente]="true"
+    [rutaRetroceder]="'paciente'"
+  ></app-componente-botones-cabecera>
+</div>
+
+<div class="row mt-4 mx-3">
+  <div class="col-md-3">
+    <app-componente-cajas-informacion-paciente></app-componente-cajas-informacion-paciente>
+  </div>
+
+  <!-- col para dar espaciado entre elementos -->
+  <div class="col-md-1"></div>
+
+  <div class="col-lg-7 col-md-8 columnaTabla">
+    <app-componente-historial-paciente></app-componente-historial-paciente>
+  </div>
+</div>
