@@ -9,6 +9,6 @@ export class InformeService {
   constructor(private http: HttpClient) { }
 
   guardar(datos: any): Observable<any> { // Guardar informes
-    return this.http.post('http://localhost:8000/api/informes/guardar', datos);
+    return this.http.post('https://ivo-back.online/api/informes/guardar', datos);
   }
 }

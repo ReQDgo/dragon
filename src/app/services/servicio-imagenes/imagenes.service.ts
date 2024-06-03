@@ -11,11 +11,11 @@ export class ImagenesService {
 
   mostrarImagenesDelPaciente(idCita: string): Observable<any> {
     return this.http.get(
-      `http://localhost:8000/api/imagenes/mostrarImagenesDelPaciente/${idCita}`
+      `https://ivo-back.online/api/imagenes/mostrarImagenesDelPaciente/${idCita}`
     );
   }
 
   guardar(datos: any): Observable<any> { // Guardar imágenes radiológicas
-   return this.http.post('http://localhost:8000/api/imagenes/guardar', datos);
+   return this.http.post('https://ivo-back.online/api/imagenes/guardar', datos);
   }
 }

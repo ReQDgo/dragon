@@ -10,7 +10,7 @@ export class HistorialesService {
 
   mostrarHistorialMedico(id_paciente: number): Observable<any> {
     return this.http.get(
-      `http://localhost:8000/api/historiales/${id_paciente}`
+      `https://ivo-back.online/api/historiales/${id_paciente}`
      );
   }
 }

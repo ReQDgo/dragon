@@ -12,20 +12,20 @@ export class UsuariosService {
 
   buscarPorDni(): Observable<any> {
     return this.http.get(
-     'http://localhost:8000/api/usuarios/buscarPorDni'
+     'https://ivo-back.online/api/usuarios/buscarPorDni'
     );
   }
 
   mostrarRadiologos(): Observable<any> {
     return this.http.get(
-      'http://localhost:8000/api/usuarios/mostrarRadiologos'
+      'https://ivo-back.online/api/usuarios/mostrarRadiologos'
     );
   }
 
   crearUsuarioPaciente(datos: any): Observable<any> {
     // Ajusta la URL según tu configuración
     return this.http.post(
-      'http://localhost:8000/api/usuarios/crearUsuarioPaciente', datos
+      'https://ivo-back.online/api/usuarios/crearUsuarioPaciente', datos
     );
   }
 }

@@ -11,13 +11,13 @@ export class StockService {
 
   buscarAlmacenPorCodigo(codigoAlmacen: string): Observable<any> {
     return this.http.post<any>(
-     'http://localhost:8000/api/almacen/comprobar-almacen',
+     'https://ivo-back.online/api/almacen/comprobar-almacen',
      { codigoAlmacen: codigoAlmacen }
     );
   }
 
   actualizarExistenciasMaterial(materiales: { id_material: number, cantidad: number }[]): Observable<any> {
-    return this.http.post('http://localhost:8000/api/almacen/actualizar-existencias', { materiales });
+    return this.http.post('https://ivo-back.online/api/almacen/actualizar-existencias', { materiales });
   }
 }
 

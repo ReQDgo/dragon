@@ -13,26 +13,26 @@ export class CitasService {
   mostrarCitasDelPaciente(pacienteId: number): Observable<any> {
     return this.http.get(
       //`http://localhost:443/ivo_backend/public/api/citas/mostrarCitasDelPaciente/${pacienteId}`
-      `http://localhost:8000/api/citas/mostrarCitasDelPaciente/${pacienteId}`
+      `https://ivo-back.online/api/citas/mostrarCitasDelPaciente/${pacienteId}`
     );
   }
 
   mostrarDiagnosticoDelPaciente(idCita: string): Observable<any> {
     return this.http.get(
       //`http://localhost:443/ivo_backend/public/api/diagnosticos/mostrarDiagnosticoDelPaciente/${idCita}`
-      `http://localhost:8000/api/diagnosticos/mostrarDiagnosticoDelPaciente/${idCita}`
+      `https://ivo-back.online/api/diagnosticos/mostrarDiagnosticoDelPaciente/${idCita}`
     );
   }
 
   mostrarInformeDelPaciente(idCita: string): Observable<any> {
     return this.http.get(
       //`http://localhost:443/ivo_backend/public/api/informes/mostrarInformeDelPaciente/${idCita}`
-      `http://localhost:8000/api/informes/mostrarInformeDelPaciente/${idCita}`
+      `https://ivo-back.online/api/informes/mostrarInformeDelPaciente/${idCita}`
     );
   }
 
   cancelarCita(numCita: string): Observable<any> {
-    let url = `http://localhost:8000/api/citas/cancelarCita/${numCita}`;
+    let url = `https://ivo-back.online/api/citas/cancelarCita/${numCita}`;
 
     return this.http.post(url, null); // Proporciona null como el cuerpo
   }
@@ -42,12 +42,12 @@ export class CitasService {
   comprobarNumeroDeCita(): Observable<any> {
     return this.http.get(
       //`http://localhost:443/ivo_backend/public/api/citas/comprobarNumCita`
-      `http://localhost:8000/api/citas/comprobarNumCita`
+      `https://ivo-back.online/api/citas/comprobarNumCita`
     );
   }
 
   cumplirCita(numCita: number): Observable<any> {
-    let url = `http://localhost:8000/api/citas/cumplirCita/${numCita}`;
+    let url = `https://ivo-back.online/api/citas/cumplirCita/${numCita}`;
     return this.http.post(url,null);
   }
   
@@ -67,7 +67,7 @@ export class CitasService {
       // Realiza la solicitud HTTP incluyendo los encabezados
       return this.http.get(
         //'http://localhost:443/ivo_backend/public/api/citas/mostrarCitasDelDia',
-        'http://localhost:8000/api/citas/mostrarCitasDelDia',
+        'https://ivo-back.online/api/citas/mostrarCitasDelDia',
         { headers }
       );
     } else {
@@ -80,7 +80,7 @@ export class CitasService {
 
   updateCita(idCita: string, datosActualizados: any): Observable<any> {
     // Cambia la URL según tu estructura de rutas
-    const url = `http://localhost:8000/api/citas/actualizar/${idCita}`;
+    const url = `https://ivo-back.online/api/citas/actualizar/${idCita}`;
 
     return this.http.put(url, datosActualizados);
   }
@@ -88,12 +88,12 @@ export class CitasService {
   // ENDPOINTS DEL MEDICO:
   mostrarCitasMedico(id_medico: number): Observable<any> {
     return this.http.get(
-      `http://localhost:8000/api/citas/mostrarCitasMedico/${id_medico}`
+      `https://ivo-back.online/api/citas/mostrarCitasMedico/${id_medico}`
     );
   }
 
   crearCitaRadiologica(datosInsertados:any): Observable<any> {
-    const url = `http://localhost:8000/api/citas/guardar`;
+    const url = `https://ivo-back.online/api/citas/guardar`;
     return this.http.post(url, datosInsertados);
   }
 }

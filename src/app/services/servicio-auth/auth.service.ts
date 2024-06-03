@@ -7,7 +7,7 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8000/api';
+  private apiUrl = 'https://ivo-back.online/api';
   //private apiUrl = 'http://localhost:443/ivo_backend/public/api';
   //private apiUrl = 'http://127.0.0.1:8000/api';
 
